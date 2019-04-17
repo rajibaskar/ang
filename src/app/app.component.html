@@ -10,9 +10,6 @@
           routerLinkActive="active">
           {{item.label | translate}}
         </a>
-        <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
-          Github
-        </a>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -59,15 +56,6 @@
             <fa-icon icon="cog"></fa-icon>
           </button>
 
-          <a [matTooltip]="'raj.header.github' | translate"
-             matTooltipPosition="before"
-             mat-icon-button
-             class="link d-none d-sm-inline"
-             href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-             target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-
           <span *ngIf="language$ | async as language">
             <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
               <mat-option *ngFor="let l of languages" [value]="l">
@@ -82,7 +70,7 @@
       </div>
 
       <div class="footer">
-        <div class="row">
+        <!--<div class="row">
           <div class="col-sm-12 links">
             <a href="https://www.github.com/tomastrajan" target="_blank">
               <fa-icon [icon]="['fab','github']"></fa-icon>
@@ -110,10 +98,10 @@
               <span>Slides</span>
             </a>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-12 signature">
-            &#169; <span class="year" data-testid="footer-year">{{year}}</span> - Tomas Trajan
+            &#169; <span class="year" data-testid="footer-year">{{year}}</span> - Raj Tech
             <br class="d-block d-sm-none">
             <a [matTooltip]="'raj.footer.changelog' | translate"
                matTooltipPosition="before"
