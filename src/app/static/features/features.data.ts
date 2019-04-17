@@ -38,7 +38,7 @@ export const features: Feature[] = [
     github: 'https://github.com/ngrx/platform',
     documentation: 'http://ngrx.github.io/',
     medium:
-      'https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0'
+      'https://medium.com/@raj-family/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0'
   },
   {
     name: 'RxJS',
@@ -47,7 +47,7 @@ export const features: Feature[] = [
     github: 'https://github.com/ReactiveX/RxJS',
     documentation: 'http://reactivex.io/rxjs/',
     medium:
-      'https://medium.com/@tomastrajan/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293'
+      'https://medium.com/@raj-family/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293'
   },
   {
     name: 'Bootstrap',
@@ -56,7 +56,7 @@ export const features: Feature[] = [
     github: 'https://github.com/twbs/bootstrap',
     documentation: 'https://getbootstrap.com/docs/4.0/layout/grid/',
     medium:
-      'https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b'
+      'https://medium.com/@raj-family/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b'
   },
   {
     name: 'Typescript',
@@ -91,7 +91,7 @@ export const features: Feature[] = [
     description: 'raj.features.themes.description',
     documentation: 'https://material.angular.io/guide/theming',
     medium:
-      'https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1'
+      'https://medium.com/@raj-family/the-complete-guide-to-angular-material-themes-4d165a9d24d1'
   },
   {
     name: 'raj.features.lazyloading.title',

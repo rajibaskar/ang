@@ -386,7 +386,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/rajibaskar/ang/commit/8e8fc49)), closes [tomastrajan/raj-office-apps/#126](https://github.com/rajibaskar/ang//issues/126)
+* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/rajibaskar/ang/commit/8e8fc49)), closes [raj-family/raj-office-apps/#126](https://github.com/rajibaskar/ang//issues/126)
 * **build:** use rimraf to clean dist to support building in windows environments ([f883013](https://github.com/rajibaskar/ang/commit/f883013))
 
 

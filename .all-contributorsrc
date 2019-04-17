@@ -1,6 +1,6 @@
 {
   "projectName": "raj-office-apps",
-  "projectOwner": "tomastrajan",
+  "projectOwner": "raj-family",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -10,10 +10,10 @@
   "commit": false,
   "contributors": [
     {
-      "login": "tomastrajan",
+      "login": "raj-family",
       "name": "Raj",
       "avatar_url": "https://avatars0.githubusercontent.com/u/3764868?v=4",
-      "profile": "https://medium.com/@tomastrajan",
+      "profile": "https://medium.com/@raj-family",
       "contributions": [
         "code",
         "doc",
