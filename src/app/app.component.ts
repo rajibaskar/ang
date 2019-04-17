@@ -22,7 +22,7 @@ import {
 } from './settings';
 
 @Component({
-  selector: 'anms-root',
+  selector: 'raj-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -35,13 +35,13 @@ export class AppComponent implements OnInit {
   logo = require('../assets/logo.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'features', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
+    { link: 'about', label: 'raj.menu.about' },
+    { link: 'features', label: 'raj.menu.features' },
+    { link: 'examples', label: 'raj.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
+    { link: 'settings', label: 'raj.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;

@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "anms",
+      "prefix": "raj",
       "schematics": {
         "@schematics/angular:component": {
           "changeDetection": "OnPush"
