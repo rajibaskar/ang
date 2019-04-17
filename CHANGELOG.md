@@ -341,14 +341,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 <a name="6.0.0"></a>
-# [6.0.0](https://github.com/mumairofficial/angular-ngrx-material-starter/compare/v6.0.0-rc.4...v6.0.0) (2018-05-04)
+# [6.0.0](https://github.com/mumairofficial/raj-office-apps/compare/v6.0.0-rc.4...v6.0.0) (2018-05-04)
 
 
 ### Features
 
-* **build:** lint e2e tests ([fe55a82](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/fe55a82))
-* **dependencies:** migrated to stable release of Angular 6.0.0 ([cb2d0ae](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/cb2d0ae))
-* **e2e:** [#178](https://github.com/mumairofficial/angular-ngrx-material-starter/issues/178) add tests for app and about page ([31565c0](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/31565c0))
+* **build:** lint e2e tests ([fe55a82](https://github.com/mumairofficial/raj-office-apps/commit/fe55a82))
+* **dependencies:** migrated to stable release of Angular 6.0.0 ([cb2d0ae](https://github.com/mumairofficial/raj-office-apps/commit/cb2d0ae))
+* **e2e:** [#178](https://github.com/mumairofficial/raj-office-apps/issues/178) add tests for app and about page ([31565c0](https://github.com/mumairofficial/raj-office-apps/commit/31565c0))
 
 
 
@@ -386,7 +386,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/rajibaskar/ang/commit/8e8fc49)), closes [tomastrajan/angular-ngrx-material-starter/#126](https://github.com/rajibaskar/ang//issues/126)
+* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/rajibaskar/ang/commit/8e8fc49)), closes [tomastrajan/raj-office-apps/#126](https://github.com/rajibaskar/ang//issues/126)
 * **build:** use rimraf to clean dist to support building in windows environments ([f883013](https://github.com/rajibaskar/ang/commit/f883013))
 
 

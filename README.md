@@ -1,17 +1,17 @@
 # Angular, NgRx and Angular Material Starter 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
-[![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/rajibaskar/ang/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) 
-[![Codecov](https://img.shields.io/codecov/c/github/tomastrajan/angular-ngrx-material-starter.svg)](https://codecov.io/gh/tomastrajan/angular-ngrx-material-starter)
+[![license](https://img.shields.io/github/license/tomastrajan/raj-office-apps.svg)](https://github.com/rajibaskar/ang/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/raj-office-apps.svg?branch=master)](https://travis-ci.org/tomastrajan/raj-office-apps) 
+[![Codecov](https://img.shields.io/codecov/c/github/tomastrajan/raj-office-apps.svg)](https://codecov.io/gh/tomastrajan/raj-office-apps)
  [![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
 
 
-![intro](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
-![themes](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/themes.png)
+![intro](https://raw.githubusercontent.com/tomastrajan/raj-office-apps/master/meta-assets/intro.png)
+![themes](https://raw.githubusercontent.com/tomastrajan/raj-office-apps/master/meta-assets/themes.png)
 
 ## Table of Content
 
-  * [Live Demo](https://tomastrajan.github.io/angular-ngrx-material-starter)
+  * [Live Demo](https://github.com/rajibaskar/ang)
   * [Getting Started](#getting-started)
   * [Useful Commands](#useful-commands)
   * [Make It Your Own](#make-it-your-own)
@@ -44,7 +44,7 @@ npm start
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
   * `npm run compodoc` - runs [Compodoc](https://compodoc.app) to generate a static documentation of the application 
 
-![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
+![analzye](https://raw.githubusercontent.com/tomastrajan/raj-office-apps/master/meta-assets/analyze.png)
 ## Run Inside Docker Container
   * `docker build -t material-starter .` - builds docker image with name `material-starter`
   * `docker run -it \
@@ -76,7 +76,7 @@ When using this starter project to build your own app you might consider some of
   
   * use `search and replace` functionality of your favourite IDE to replace `raj` with `<your-app-prefix>`
   * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
-  * remove / rename context path config ` -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
+  * remove / rename context path config ` -- --deploy-url /raj-office-apps/ --base-href /raj-office-apps` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
   * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
