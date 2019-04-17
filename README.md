@@ -1,7 +1,7 @@
 # Angular, NgRx and Angular Material Starter 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
-[![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) 
+[![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/rajibaskar/ang/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) 
 [![Codecov](https://img.shields.io/codecov/c/github/tomastrajan/angular-ngrx-material-starter.svg)](https://codecov.io/gh/tomastrajan/angular-ngrx-material-starter)
  [![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
 
@@ -17,17 +17,17 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
   * [Make It Your Own](#make-it-your-own)
   * [Goals](#goals)
   * [Learning Materials](#learning-materials)
-  * [List of Projects Built Using This Starter](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md)
+  * [List of Projects Built Using This Starter](https://github.com/rajibaskar/ang/blob/master/BUILT_WITH.md)
   * [Features](#features)
   * [Stack](#stack)
-  * [Code of Conduct](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CODE_OF_CONDUCT.md)
-  * [Contributors Guide](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md)
-  * [Changelog](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md) ( get notified about the newest releases, [follow Release Butler](https://twitter.com/releasebutler) on Twitter )
+  * [Code of Conduct](https://github.com/rajibaskar/ang/blob/master/CODE_OF_CONDUCT.md)
+  * [Contributors Guide](https://github.com/rajibaskar/ang/blob/master/CONTRIBUTING.md)
+  * [Changelog](https://github.com/rajibaskar/ang/blob/master/CHANGELOG.md) ( get notified about the newest releases, [follow Release Butler](https://twitter.com/releasebutler) on Twitter )
 
 
 ## Getting started
 ```bash
-git clone https://github.com/tomastrajan/angular-ngrx-material-starter.git new-project
+git clone https://github.com/rajibaskar/ang.git new-project
 cd new-project
 npm install
 npm start
@@ -81,10 +81,10 @@ When using this starter project to build your own app you might consider some of
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
   * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
   * edit the title and Open Graph metadata properties in `index.html`
-  * remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
+  * remove or adjust links in the [footer](https://github.com/rajibaskar/ang/blob/master/src/app/app.component.html#L79)
   * replace logo in `src/assets` folder ( currently 128 x 128 pixel `png` file )
   * adjust colors in `src/themes/default-theme.scss`
-  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILT_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
+  * create a pull request in the [original repository](https://github.com/rajibaskar/ang/) to update `BUILT_WITH.md` [file](https://github.com/rajibaskar/ang/blob/master/BUILT_WITH.md) with a link and short description of your project
   
 #### Continuous Integration
 Starter project is using [Travis CI](https://travis-ci.org/) for running linters and tests on every commit.
@@ -162,6 +162,6 @@ Want to start contributing to open source with Angular?
 
 Leave your mark and join the growing team of contributors!
 
-Get started by checking out list of open [issues](https://github.com/tomastrajan/angular-ngrx-material-starter/issues) and reading [Contributor Guide](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md)
+Get started by checking out list of open [issues](https://github.com/rajibaskar/ang/issues) and reading [Contributor Guide](https://github.com/rajibaskar/ang/blob/master/CONTRIBUTING.md)
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
