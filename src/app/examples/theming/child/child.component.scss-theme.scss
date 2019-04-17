@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin anms-child-component-theme($theme) {
+@mixin raj-child-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  anms-child {
+  raj-child {
     > div {
       border-color: mat-color($warn);
 

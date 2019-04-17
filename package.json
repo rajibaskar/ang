@@ -1,7 +1,7 @@
 {
-  "name": "angular-ngrx-material-starter",
-  "version": "7.4.0",
-  "license": "MIT",
+  "name": "ang-start",
+  "version": "0.0.1",
+  "license": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",

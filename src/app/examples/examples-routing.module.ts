@@ -25,17 +25,17 @@ const routes: Routes = [
       {
         path: 'todos',
         component: TodosContainerComponent,
-        data: { title: 'anms.examples.menu.todos' }
+        data: { title: 'raj.examples.menu.todos' }
       },
       {
         path: 'stock-market',
         component: StockMarketContainerComponent,
-        data: { title: 'anms.examples.menu.stocks' }
+        data: { title: 'raj.examples.menu.stocks' }
       },
       {
         path: 'theming',
         component: ParentComponent,
-        data: { title: 'anms.examples.menu.theming' }
+        data: { title: 'raj.examples.menu.theming' }
       },
       {
         path: 'crud',
@@ -45,23 +45,23 @@ const routes: Routes = [
       {
         path: 'crud/:id',
         component: CrudComponent,
-        data: { title: 'anms.examples.menu.crud' }
+        data: { title: 'raj.examples.menu.crud' }
       },
       {
         path: 'form',
         component: FormComponent,
-        data: { title: 'anms.examples.menu.form' }
+        data: { title: 'raj.examples.menu.form' }
       },
       {
         path: 'notifications',
         component: NotificationsComponent,
-        data: { title: 'anms.examples.menu.notifications' }
+        data: { title: 'raj.examples.menu.notifications' }
       },
       {
         path: 'authenticated',
         component: AuthenticatedComponent,
         canActivate: [AuthGuardService],
-        data: { title: 'anms.examples.menu.auth' }
+        data: { title: 'raj.examples.menu.auth' }
       }
     ]
   }
