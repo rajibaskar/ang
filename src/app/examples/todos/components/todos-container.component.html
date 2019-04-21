@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <raj-big-input rtl [placeholder]="'raj.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
+      <zi7-big-input rtl [placeholder]="'zi7.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
         (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
-        <raj-big-input-action ariaLabel="add todo" fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
-          (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'raj.examples.todos.tooltip.add' | translate"
+        <zi7-big-input-action ariaLabel="add todo" fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
+          (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'zi7.examples.todos.tooltip.add' | translate"
           matTooltipPosition="before">
-        </raj-big-input-action>
-        <raj-big-input-action ariaLabel="remove done items" fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
+        </zi7-big-input-action>
+        <zi7-big-input-action ariaLabel="remove done items" fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
           (action)="onRemoveDoneTodos()" [disabled]="removeDoneDisabled$ | async"
-          [matTooltip]="'raj.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
-        </raj-big-input-action>
-      </raj-big-input>
+          [matTooltip]="'zi7.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
+        </zi7-big-input-action>
+      </zi7-big-input>
     </div>
   </div>
   <div class="row">
     <ng-container *ngIf="todos$ | async as todos">
       <div class="col-md-6">
         <h2>
-          {{ 'raj.examples.todos.list' | translate }}
+          {{ 'zi7.examples.todos.list' | translate }}
           <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter" aria-label="open filter menu">
             <fa-icon icon="filter"></fa-icon>
           </button>
@@ -28,32 +28,32 @@
               <mat-icon>
                 <fa-icon icon="tasks"></fa-icon>
               </mat-icon>
-              <span>{{ 'raj.examples.todos.filter.all' | translate }}</span>
+              <span>{{ 'zi7.examples.todos.filter.all' | translate }}</span>
             </button>
             <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }"
               aria-label="show completed items">
               <mat-icon>
                 <fa-icon icon="check"></fa-icon>
               </mat-icon>
-              <span>{{ 'raj.examples.todos.filter.done' | translate }}</span>
+              <span>{{ 'zi7.examples.todos.filter.done' | translate }}</span>
             </button>
             <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }"
               aria-label="show active items">
               <mat-icon>
                 <fa-icon icon="square"></fa-icon>
               </mat-icon>
-              <span>{{ 'raj.examples.todos.filter.active' | translate }}</span>
+              <span>{{ 'zi7.examples.todos.filter.active' | translate }}</span>
             </button>
           </mat-menu>
           <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
             <mat-chip [disabled]=true [ngPlural]="todos.length">
-              {{ 'raj.examples.todos.filter.description' | translate }}
-              <ng-template ngPluralCase="other">{{ todos.length }} {{ 'raj.examples.todos.filter.items' |
+              {{ 'zi7.examples.todos.filter.description' | translate }}
+              <ng-template ngPluralCase="other">{{ todos.length }} {{ 'zi7.examples.todos.filter.items' |
                 translate }}</ng-template>
-              <ng-template ngPluralCase="=1">{{ 'raj.examples.todos.filter.one' | translate }} {{
-                'raj.examples.todos.filter.item' | translate }}</ng-template>
-              <ng-template ngPluralCase="=0">{{ 'raj.examples.todos.filter.none' | translate }} {{
-                'raj.examples.todos.filter.items' | translate }}</ng-template>
+              <ng-template ngPluralCase="=1">{{ 'zi7.examples.todos.filter.one' | translate }} {{
+                'zi7.examples.todos.filter.item' | translate }}</ng-template>
+              <ng-template ngPluralCase="=0">{{ 'zi7.examples.todos.filter.none' | translate }} {{
+                'zi7.examples.todos.filter.items' | translate }}</ng-template>
             </mat-chip>
           </mat-chip-list>
         </h2>
@@ -68,17 +68,17 @@
       </div>
   </ng-container>
     <div class="offset-md-1 col-md-5" [ngClass]="routeAnimationsElements" rtl>
-      <h2>{{ 'raj.examples.todos.example' | translate }}</h2>
+      <h2>{{ 'zi7.examples.todos.example' | translate }}</h2>
       <p>
-        {{ 'raj.examples.todos.text1' | translate }}
-        <code>{{ 'raj.examples.todos.text2' | translate }}</code>
-        {{ 'raj.examples.todos.text3' | translate }}
+        {{ 'zi7.examples.todos.text1' | translate }}
+        <code>{{ 'zi7.examples.todos.text2' | translate }}</code>
+        {{ 'zi7.examples.todos.text3' | translate }}
       </p>
       <p>
-        {{ 'raj.examples.todos.text4' | translate }} <code>ngrx</code>
-        {{ 'raj.examples.todos.text5' | translate }}
+        {{ 'zi7.examples.todos.text4' | translate }} <code>ngrx</code>
+        {{ 'zi7.examples.todos.text5' | translate }}
       </p>
-      <p>{{ 'raj.examples.todos.text6' | translate }}</p>
+      <p>{{ 'zi7.examples.todos.text6' | translate }}</p>
       <br>
     </div>
   </div>

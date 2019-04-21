@@ -8,7 +8,7 @@ describe('About Page', () => {
 
   it('should display main heading', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Raj Office Apps');
+    expect(page.getParagraphText()).toEqual('Zi7 Office Apps');
   });
 
   it('should display "Geting Started" section', () => {

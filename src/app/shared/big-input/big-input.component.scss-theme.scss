@@ -1,12 +1,12 @@
 @import '~@angular/material/theming';
 
-@mixin raj-big-input-component-theme($theme) {
+@mixin zi7-big-input-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  raj-big-input {
+  zi7-big-input {
     .big-input {
       input {
         color: mat-color($foreground, text);

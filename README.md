@@ -1,33 +1,33 @@
 # Angular, NgRx and Angular Material Starter 
-by [@raj-family](https://twitter.com/raj-family)
+by [@zi7-family](https://twitter.com/zi7-family)
 
-[![license](https://img.shields.io/github/license/raj-family/raj-office-apps.svg)](https://github.com/rajibaskar/ang/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/raj-family/raj-office-apps.svg?branch=master)](https://travis-ci.org/raj-family/raj-office-apps) 
-[![Codecov](https://img.shields.io/codecov/c/github/raj-family/raj-office-apps.svg)](https://codecov.io/gh/raj-family/raj-office-apps)
- [![Twitter Follow](https://img.shields.io/twitter/follow/raj-family.svg?style=social&label=Follow)](https://twitter.com/raj-family)
+[![license](https://img.shields.io/github/license/zi7-family/zi7-office-apps.svg)](https://github.com/zi7ibaskar/ang/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-32-orange.svg?style=flat-square)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/zi7-family/zi7-office-apps.svg?branch=master)](https://travis-ci.org/zi7-family/zi7-office-apps) 
+[![Codecov](https://img.shields.io/codecov/c/github/zi7-family/zi7-office-apps.svg)](https://codecov.io/gh/zi7-family/zi7-office-apps)
+ [![Twitter Follow](https://img.shields.io/twitter/follow/zi7-family.svg?style=social&label=Follow)](https://twitter.com/zi7-family)
 
 
-![intro](https://raw.githubusercontent.com/raj-family/raj-office-apps/master/meta-assets/intro.png)
-![themes](https://raw.githubusercontent.com/raj-family/raj-office-apps/master/meta-assets/themes.png)
+![intro](https://raw.githubusercontent.com/zi7-family/zi7-office-apps/master/meta-assets/intro.png)
+![themes](https://raw.githubusercontent.com/zi7-family/zi7-office-apps/master/meta-assets/themes.png)
 
 ## Table of Content
 
-  * [Live Demo](https://github.com/rajibaskar/ang)
+  * [Live Demo](https://github.com/zi7ibaskar/ang)
   * [Getting Started](#getting-started)
   * [Useful Commands](#useful-commands)
   * [Make It Your Own](#make-it-your-own)
   * [Goals](#goals)
   * [Learning Materials](#learning-materials)
-  * [List of Projects Built Using This Starter](https://github.com/rajibaskar/ang/blob/master/BUILT_WITH.md)
+  * [List of Projects Built Using This Starter](https://github.com/zi7ibaskar/ang/blob/master/BUILT_WITH.md)
   * [Features](#features)
   * [Stack](#stack)
-  * [Code of Conduct](https://github.com/rajibaskar/ang/blob/master/CODE_OF_CONDUCT.md)
-  * [Contributors Guide](https://github.com/rajibaskar/ang/blob/master/CONTRIBUTING.md)
-  * [Changelog](https://github.com/rajibaskar/ang/blob/master/CHANGELOG.md) ( get notified about the newest releases, [follow Release Butler](https://twitter.com/releasebutler) on Twitter )
+  * [Code of Conduct](https://github.com/zi7ibaskar/ang/blob/master/CODE_OF_CONDUCT.md)
+  * [Contributors Guide](https://github.com/zi7ibaskar/ang/blob/master/CONTRIBUTING.md)
+  * [Changelog](https://github.com/zi7ibaskar/ang/blob/master/CHANGELOG.md) ( get notified about the newest releases, [follow Release Butler](https://twitter.com/releasebutler) on Twitter )
 
 
 ## Getting started
 ```bash
-git clone https://github.com/rajibaskar/ang.git new-project
+git clone https://github.com/zi7ibaskar/ang.git new-project
 cd new-project
 npm install
 npm start
@@ -44,7 +44,7 @@ npm start
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
   * `npm run compodoc` - runs [Compodoc](https://compodoc.app) to generate a static documentation of the application 
 
-![analzye](https://raw.githubusercontent.com/raj-family/raj-office-apps/master/meta-assets/analyze.png)
+![analzye](https://raw.githubusercontent.com/zi7-family/zi7-office-apps/master/meta-assets/analyze.png)
 ## Run Inside Docker Container
   * `docker build -t material-starter .` - builds docker image with name `material-starter`
   * `docker run -it \
@@ -74,24 +74,24 @@ The following npm scripts correspond to the docker-compose commands.
 ## Make It Your Own
 When using this starter project to build your own app you might consider some of the following steps:
   
-  * use `search and replace` functionality of your favourite IDE to replace `raj` with `<your-app-prefix>`
+  * use `search and replace` functionality of your favourite IDE to replace `zi7` with `<your-app-prefix>`
   * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
-  * remove / rename context path config ` -- --deploy-url /raj-office-apps/ --base-href /raj-office-apps` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
+  * remove / rename context path config ` -- --deploy-url /zi7-office-apps/ --base-href /zi7-office-apps` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
   * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
   * edit the title and Open Graph metadata properties in `index.html`
-  * remove or adjust links in the [footer](https://github.com/rajibaskar/ang/blob/master/src/app/app.component.html#L79)
+  * remove or adjust links in the [footer](https://github.com/zi7ibaskar/ang/blob/master/src/app/app.component.html#L79)
   * replace logo in `src/assets` folder ( currently 128 x 128 pixel `png` file )
   * adjust colors in `src/themes/default-theme.scss`
-  * create a pull request in the [original repository](https://github.com/rajibaskar/ang/) to update `BUILT_WITH.md` [file](https://github.com/rajibaskar/ang/blob/master/BUILT_WITH.md) with a link and short description of your project
+  * create a pull request in the [original repository](https://github.com/zi7ibaskar/ang/) to update `BUILT_WITH.md` [file](https://github.com/zi7ibaskar/ang/blob/master/BUILT_WITH.md) with a link and short description of your project
   
 #### Continuous Integration
 Starter project is using [Travis CI](https://travis-ci.org/) for running linters and tests on every commit.
 Based on your preferences and needs you can either:
 
   * not use / use other CI server and delete both `.travis.yml` and `.travis-deploy.sh`
-  * create Travis CI account and link it to your projects Github repo and [configure build](https://medium.com/@raj-family/continuous-deployment-of-client-side-apps-with-github-pages-travis-ci-10e9d641a889) 
+  * create Travis CI account and link it to your projects Github repo and [configure build](https://medium.com/@zi7-family/continuous-deployment-of-client-side-apps-with-github-pages-travis-ci-10e9d641a889) 
     with `GH_REF` and `GH_TOKEN` environment variables for automatic deployment of releases to Github Pages
   
 
@@ -116,20 +116,20 @@ simple features and enhance test coverage, all contributors are more than welcom
 ## Learning Materials
 Articles with content that explains various approaches used to build this starter project.
 
-  * [Blog post about Best subscribing to RxJS Observable data by Components](https://medium.com/@raj-family/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794): subscribe() vs | async pipe
-  * [Blog post about Best Practices for Angular CLI](https://medium.com/@raj-family/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) used in this starter project
-  * [Blog post about Typescript tips for Ngrx reducer code](https://medium.com/@raj-family/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0)
-  * [Blog post about building responsive layouts with Bootstrap 4 in Angular apps](https://medium.com/@raj-family/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b)
-  * [Blog post about configuration of animations during runtime](https://medium.com/raj-family/total-guide-to-dynamic-angular-animations-that-can-be-toggled-at-runtime-be5bb6778a0a)
-  * [Blog post about unit testing of components with NgRx TestStore](https://medium.com/@raj-family/how-to-unit-test-angular-components-with-fake-ngrx-teststore-f0500cc5fc26)
-  * [Blog post about Angular CLI budgets](https://medium.com/@raj-family/how-did-angular-cli-budgets-save-my-day-and-how-they-can-save-yours-300d534aae7a)
-  * [Blog post about the best way to unsubscribe RxJs streams](https://medium.com/@raj-family/the-best-way-to-unsubscribe-rxjs-observable-in-the-angular-applications-d8f9aa42f6a0)
-  * [Blog post about Angular 6+ DI with providedIn](https://medium.com/@raj-family/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f)
+  * [Blog post about Best subscribing to RxJS Observable data by Components](https://medium.com/@zi7-family/angular-question-rxjs-subscribe-vs-async-pipe-in-component-templates-c956c8c0c794): subscribe() vs | async pipe
+  * [Blog post about Best Practices for Angular CLI](https://medium.com/@zi7-family/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) used in this starter project
+  * [Blog post about Typescript tips for Ngrx reducer code](https://medium.com/@zi7-family/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0)
+  * [Blog post about building responsive layouts with Bootstrap 4 in Angular apps](https://medium.com/@zi7-family/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b)
+  * [Blog post about configuration of animations during runtime](https://medium.com/zi7-family/total-guide-to-dynamic-angular-animations-that-can-be-toggled-at-runtime-be5bb6778a0a)
+  * [Blog post about unit testing of components with NgRx TestStore](https://medium.com/@zi7-family/how-to-unit-test-angular-components-with-fake-ngrx-teststore-f0500cc5fc26)
+  * [Blog post about Angular CLI budgets](https://medium.com/@zi7-family/how-did-angular-cli-budgets-save-my-day-and-how-they-can-save-yours-300d534aae7a)
+  * [Blog post about the best way to unsubscribe RxJs streams](https://medium.com/@zi7-family/the-best-way-to-unsubscribe-rxjs-observable-in-the-angular-applications-d8f9aa42f6a0)
+  * [Blog post about Angular 6+ DI with providedIn](https://medium.com/@zi7-family/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f)
 
 #### Theming 
 
-  * [Blog post](https://medium.com/@raj-family/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
-  * [Presentation (Slides)](http://slides.com/raj-family/angular-material-themes-guide#/)
+  * [Blog post](https://medium.com/@zi7-family/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
+  * [Presentation (Slides)](http://slides.com/zi7-family/angular-material-themes-guide#/)
   * [Live coding Video Tutorial](https://www.youtube.com/watch?v=PsgZjFTAleI)
   * [Meetup Presentation & Live coding Video](https://www.youtube.com/watch?v=7auj9RfCNrE)
 
@@ -149,7 +149,7 @@ Articles with content that explains various approaches used to build this starte
 ## Stack
 
 * Angular
-* ngrx (or try [ngx-model](https://github.com/raj-family/ngx-model) if you prefer less boilerplate)
+* ngrx (or try [ngx-model](https://github.com/zi7-family/ngx-model) if you prefer less boilerplate)
 * Angular Material
 * Bootstrap 4 (only reset, utils and grids)
 
@@ -162,6 +162,6 @@ Want to start contributing to open source with Angular?
 
 Leave your mark and join the growing team of contributors!
 
-Get started by checking out list of open [issues](https://github.com/rajibaskar/ang/issues) and reading [Contributor Guide](https://github.com/rajibaskar/ang/blob/master/CONTRIBUTING.md)
+Get started by checking out list of open [issues](https://github.com/zi7ibaskar/ang/issues) and reading [Contributor Guide](https://github.com/zi7ibaskar/ang/blob/master/CONTRIBUTING.md)
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->

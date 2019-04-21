@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'raj-child',
+  selector: 'zi7-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

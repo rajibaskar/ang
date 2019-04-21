@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsContainerComponent,
-    data: { title: 'raj.menu.settings' }
+    data: { title: 'zi7.menu.settings' }
   },
   {
     path: 'examples',

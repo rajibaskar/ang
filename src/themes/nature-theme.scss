@@ -1,9 +1,9 @@
-$raj-nature-primary: mat-palette($mat-brown, 700, 300, 900);
-$raj-nature-accent: mat-palette($mat-deep-purple, 300);
-$raj-nature-warn: mat-palette($mat-red, 600);
+$zi7-nature-primary: mat-palette($mat-brown, 700, 300, 900);
+$zi7-nature-accent: mat-palette($mat-deep-purple, 300);
+$zi7-nature-warn: mat-palette($mat-red, 600);
 
-$raj-nature-theme: mat-light-theme(
-  $raj-nature-primary,
-  $raj-nature-accent,
-  $raj-nature-warn
+$zi7-nature-theme: mat-light-theme(
+  $zi7-nature-primary,
+  $zi7-nature-accent,
+  $zi7-nature-warn
 );

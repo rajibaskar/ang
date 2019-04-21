@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin raj-parent-component-theme($theme) {
+@mixin zi7-parent-component-theme($theme) {
   $accent: map-get($theme, accent);
 
-  raj-parent {
+  zi7-parent {
     > .container {
       > .row {
         > .col-md-6 {

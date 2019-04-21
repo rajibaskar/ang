@@ -1,5 +1,5 @@
 import browser from 'browser-detect';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -21,8 +21,10 @@ import {
   selectSettingsStickyHeader
 } from './settings';
 
+declare const gapi: any;
+
 @Component({
-  selector: 'raj-root',
+  selector: 'zi7-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -35,19 +37,34 @@ export class AppComponent implements OnInit {
   logo = require('../assets/logo.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
   navigation = [
-    { link: 'about', label: 'raj.menu.about' },
-    { link: 'features', label: 'raj.menu.features' },
-    { link: 'examples', label: 'raj.menu.examples' }
+    { link: 'about', label: 'zi7.menu.about' },
+    { link: 'features', label: 'zi7.menu.features' },
+    { link: 'examples', label: 'zi7.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'raj.menu.settings' }
+    { link: 'settings', label: 'zi7.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;
   stickyHeader$: Observable<boolean>;
   language$: Observable<string>;
   theme$: Observable<string>;
+
+  @ViewChild('googleBtn')
+  googleBtnEl: ElementRef;
+
+  private clientId = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
+
+  private scope = [
+    'profile',
+    'email',
+    'https://www.googleapis.com/auth/plus.me',
+    'https://www.googleapis.com/auth/contacts.readonly',
+    'https://www.googleapis.com/auth/admin.directory.user.readonly'
+  ].join(' ');
+
+  public auth2: any;
 
   constructor(
     private store: Store<AppState>,
@@ -68,21 +85,51 @@ export class AppComponent implements OnInit {
       );
     }
 
+    this.googleInit();
+
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
-
+  /*
   onLoginClick() {
     this.store.dispatch(new ActionAuthLogin());
   }
-
+*/
   onLogoutClick() {
     this.store.dispatch(new ActionAuthLogout());
   }
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
+  }
+
+  public googleInit() {
+    gapi.load('auth2', () => {
+      this.auth2 = gapi.auth2.init({
+        client_id: this.clientId,
+        cookiepolicy: 'single_host_origin',
+        scope: this.scope
+      });
+      this.attachSignin();
+    });
+  }
+
+  public attachSignin() {
+    this.auth2.attachClickHandler(
+      this.googleBtnEl.nativeElement,
+      {},
+      googleUser => {
+        const profile = googleUser.getBasicProfile();
+        console.log('Token || ' + googleUser.getAuthResponse().id_token);
+        console.log('ID: ' + profile.getId());
+        // ...
+        this.store.dispatch(new ActionAuthLogin());
+      },
+      function(error) {
+        console.log(JSON.stringify(error, undefined, 2));
+      }
+    );
   }
 }

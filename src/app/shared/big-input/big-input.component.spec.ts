@@ -5,12 +5,12 @@ import { SharedModule } from '@app/shared';
 @Component({
   selector: 'host-for-test',
   template: `
-  <raj-big-input placeholder="I am going to do..."
+  <zi7-big-input placeholder="I am going to do..."
   [value]="newValue"
   (keyup)="onKeyEvent($event)"
   (keyup.enter)="onKeyEvent($event)"
   (keyup.escape)="onKeyEvent($event)">
-</raj-big-input>
+</zi7-big-input>
 `
 })
 class HostComponent {

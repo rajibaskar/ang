@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    data: { title: 'raj.menu.about' }
+    data: { title: 'zi7.menu.about' }
   },
   {
     path: 'features',
     component: FeaturesComponent,
-    data: { title: 'raj.menu.features' }
+    data: { title: 'zi7.menu.features' }
   }
 ];
 

@@ -1,9 +1,9 @@
-$raj-light-primary: mat-palette($mat-grey, 200, 500, 300);
-$raj-light-accent: mat-palette($mat-brown, 200);
-$raj-light-warn: mat-palette($mat-deep-orange, 200);
+$zi7-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$zi7-light-accent: mat-palette($mat-brown, 200);
+$zi7-light-warn: mat-palette($mat-deep-orange, 200);
 
-$raj-light-theme: mat-light-theme(
-  $raj-light-primary,
-  $raj-light-accent,
-  $raj-light-warn
+$zi7-light-theme: mat-light-theme(
+  $zi7-light-primary,
+  $zi7-light-accent,
+  $zi7-light-warn
 );

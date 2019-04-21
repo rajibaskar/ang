@@ -20,7 +20,7 @@ describe('FormComponent', () => {
   let dispatchSpy: jasmine.Spy;
 
   beforeEach(async () => {
-    component = await createComponent<FormComponent>('<raj-form></raj-form>', {
+    component = await createComponent<FormComponent>('<zi7-form></zi7-form>', {
       declarations: [FormComponent],
       imports: [TestingModule],
       providers: [NotificationService],
@@ -36,7 +36,7 @@ describe('FormComponent', () => {
 
   it('should submit when form is valid', async () => {
     component.input(
-      component.getByLabelText('raj.examples.form.placeholder1'),
+      component.getByLabelText('zi7.examples.form.placeholder1'),
       {
         target: {
           value: '@tim_deschryver'
@@ -44,7 +44,7 @@ describe('FormComponent', () => {
       }
     );
     component.input(
-      component.getByLabelText('raj.examples.form.placeholder2'),
+      component.getByLabelText('zi7.examples.form.placeholder2'),
       {
         target: {
           value: 'mysuperawesomeandsecurepassword'
@@ -52,7 +52,7 @@ describe('FormComponent', () => {
       }
     );
     component.input(
-      component.getByLabelText('raj.examples.form.placeholder3'),
+      component.getByLabelText('zi7.examples.form.placeholder3'),
       {
         target: {
           value: 'foo@bar.baz'
@@ -60,7 +60,7 @@ describe('FormComponent', () => {
       }
     );
     component.input(
-      component.getByLabelText('raj.examples.form.placeholder5'),
+      component.getByLabelText('zi7.examples.form.placeholder5'),
       {
         target: {
           value: '1991-12-31'
@@ -68,15 +68,15 @@ describe('FormComponent', () => {
       }
     );
     component.input(
-      component.getByLabelText('raj.examples.form.placeholder4'),
+      component.getByLabelText('zi7.examples.form.placeholder4'),
       {
         target: {
           value: 'no description needed here'
         }
       }
     );
-    component.click(component.getByLabelText('raj.examples.form.text1'));
-    component.click(component.getByText('raj.examples.form.send'));
+    component.click(component.getByLabelText('zi7.examples.form.text1'));
+    component.click(component.getByText('zi7.examples.form.send'));
     const { type, payload } = new ActionFormUpdate({
       form: {
         autosave: false,

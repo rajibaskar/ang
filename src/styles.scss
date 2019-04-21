@@ -25,34 +25,34 @@
 @import 'app/examples/examples/examples.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
-  @include raj-styles-reset-theme($theme);
-  @include raj-app-component-theme($theme);
-  @include raj-about-component-theme($theme);
-  @include raj-big-input-component-theme($theme);
-  @include raj-notifications-component-theme($theme);
-  @include raj-todos-container-component-theme($theme);
-  @include raj-stock-market-container-component-theme($theme);
-  @include raj-parent-component-theme($theme);
-  @include raj-child-component-theme($theme);
-  @include raj-examples-component-theme($theme);
+  @include zi7-styles-reset-theme($theme);
+  @include zi7-app-component-theme($theme);
+  @include zi7-about-component-theme($theme);
+  @include zi7-big-input-component-theme($theme);
+  @include zi7-notifications-component-theme($theme);
+  @include zi7-todos-container-component-theme($theme);
+  @include zi7-stock-market-container-component-theme($theme);
+  @include zi7-parent-component-theme($theme);
+  @include zi7-child-component-theme($theme);
+  @include zi7-examples-component-theme($theme);
 }
 
 .default-theme {
-  @include angular-material-theme($raj-theme);
-  @include custom-components-theme($raj-theme);
+  @include angular-material-theme($zi7-theme);
+  @include custom-components-theme($zi7-theme);
 }
 
 .light-theme {
-  @include angular-material-theme($raj-light-theme);
-  @include custom-components-theme($raj-light-theme);
+  @include angular-material-theme($zi7-light-theme);
+  @include custom-components-theme($zi7-light-theme);
 }
 
 .black-theme {
-  @include angular-material-theme($raj-black-theme);
-  @include custom-components-theme($raj-black-theme);
+  @include angular-material-theme($zi7-black-theme);
+  @include custom-components-theme($zi7-black-theme);
 }
 
 .nature-theme {
-  @include angular-material-theme($raj-nature-theme);
-  @include custom-components-theme($raj-nature-theme);
+  @include angular-material-theme($zi7-nature-theme);
+  @include custom-components-theme($zi7-nature-theme);
 }

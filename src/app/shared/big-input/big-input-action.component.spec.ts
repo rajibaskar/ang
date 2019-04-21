@@ -38,13 +38,13 @@ describe('BigInputActionComponent', () => {
     }));
 
   it('should be created', () => {
-    const template = '<raj-big-input-action></raj-big-input-action>';
+    const template = '<zi7-big-input-action></zi7-big-input-action>';
     fixture = createHostComponent(template);
     expect(component).toBeTruthy();
   });
 
   it('should initially not be disabled and show no icon or label', () => {
-    const template = '<raj-big-input-action></raj-big-input-action>';
+    const template = '<zi7-big-input-action></zi7-big-input-action>';
     fixture = createHostComponent(template);
     expect(getButton().nativeElement.disabled).toBeFalsy();
     expect(getIcon()).toBeNull();
@@ -53,13 +53,13 @@ describe('BigInputActionComponent', () => {
 
   it('should disable button if disabled property is set', () => {
     const template =
-      '<raj-big-input-action [disabled]="true"></raj-big-input-action>';
+      '<zi7-big-input-action [disabled]="true"></zi7-big-input-action>';
     fixture = createHostComponent(template);
     expect(getButton().nativeElement.disabled).toBeTruthy();
   });
 
   it('should display icon if fontSet and fontIcon properties are set', () => {
-    const template = `<raj-big-input-action fontSet="fas" fontIcon="fa-trash"></raj-big-input-action>`;
+    const template = `<zi7-big-input-action fontSet="fas" fontIcon="fa-trash"></zi7-big-input-action>`;
     fixture = createHostComponent(template);
     expect(getIcon()).toBeTruthy();
     expect(getIcon().nativeElement.classList.contains('fa-trash')).toBeTruthy();
@@ -67,14 +67,14 @@ describe('BigInputActionComponent', () => {
   });
 
   it('should display label with provided text when label property is set', () => {
-    const template = `<raj-big-input-action label="delete"></raj-big-input-action>`;
+    const template = `<zi7-big-input-action label="delete"></zi7-big-input-action>`;
     fixture = createHostComponent(template);
     expect(getLabel()).toBeTruthy();
     expect(getLabel().nativeElement.textContent).toBe('delete');
   });
 
   it('should emit action event on button click', () => {
-    const template = `<raj-big-input-action (action)="actionHandler()"></raj-big-input-action>`;
+    const template = `<zi7-big-input-action (action)="actionHandler()"></zi7-big-input-action>`;
     fixture = createHostComponent(template);
     spyOn(component, 'actionHandler').and.callThrough();
     getButton().triggerEventHandler('click', {});

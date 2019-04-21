@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'raj-big-input',
+  selector: 'zi7-big-input',
   templateUrl: './big-input.component.html',
   styleUrls: ['./big-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

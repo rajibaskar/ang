@@ -1,11 +1,11 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
-  appName: 'Raj Office Apps',
+  appName: 'Zi7 Office Apps',
   envName: 'PROD',
   production: true,
   test: false,
-  i18nPrefix: '/raj-office-apps',
+  i18nPrefix: '/zi7-office-apps',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],

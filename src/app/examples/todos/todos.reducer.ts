@@ -9,7 +9,7 @@ export const initialState: TodosState = {
     { id: uuid(), name: 'Check the other examples', done: false },
     {
       id: uuid(),
-      name: 'Use Raj Office Apps in your project',
+      name: 'Use Zi7 Office Apps in your project',
       done: false
     }
   ],

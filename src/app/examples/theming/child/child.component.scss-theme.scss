@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin raj-child-component-theme($theme) {
+@mixin zi7-child-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  raj-child {
+  zi7-child {
     > div {
       border-color: mat-color($warn);
 

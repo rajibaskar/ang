@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin raj-stock-market-container-component-theme($theme) {
+@mixin zi7-stock-market-container-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  raj-stock-market {
+  zi7-stock-market {
     mat-card {
       .negative {
         color: mat-color($warn);

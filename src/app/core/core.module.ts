@@ -38,7 +38,7 @@ import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effe
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-          name: 'Raj Office Apps'
+          name: 'Zi7 Office Apps'
         }),
 
     // 3rd party

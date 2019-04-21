@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-const APP_PREFIX = 'RAJ-';
+const APP_PREFIX = 'ZI7-';
 
 @Injectable()
 export class LocalStorageService {

@@ -4,7 +4,7 @@ describe('About', () => {
   });
 
   it('should display main heading', () => {
-    cy.get('h1').should('contain', 'Raj Office Apps');
+    cy.get('h1').should('contain', 'Zi7 Office Apps');
   });
 
   it('should display "Geting Started" section', () => {

@@ -1,4 +1,4 @@
-# Contributing to Raj Office Apps
+# Contributing to Zi7 Office Apps
 
 We would love for you to contribute to starter project and help make it even better than it is
 today! As a contributor, here are the guidelines we would like you to follow:
@@ -19,7 +19,7 @@ If not you might need to execute commands one by one instead of chaining them wi
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the [change log](https://github.com/rajibaskar/ang/blob/master/CHANGELOG.md)**.
+we use the git commit messages to **generate the [change log](https://github.com/zi7ibaskar/ang/blob/master/CHANGELOG.md)**.
 
 ### Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
@@ -91,4 +91,4 @@ fix(animations): fix dynamic animations in prod build, fixes #71
 chore(release): 6.0.1
 ```
 
-Even more [examples](https://github.com/rajibaskar/ang/commits/master) of commit messages from commit history of this project.
+Even more [examples](https://github.com/zi7ibaskar/ang/commits/master) of commit messages from commit history of this project.

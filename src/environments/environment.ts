@@ -6,7 +6,7 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
-  appName: 'Raj Office Apps',
+  appName: 'Zi7 Office Apps',
   envName: 'DEV',
   production: false,
   test: false,
