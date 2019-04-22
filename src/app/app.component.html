@@ -36,7 +36,7 @@
             </button>
           </span>
 
-          <button mat-button mat-stroked-button color="accent"  #googleBtn *ngIf="!(isAuthenticated$ | async)" >
+          <button mat-button mat-stroked-button color="accent" (click)="attachSignin()"  googleBtnEl *ngIf="!(isAuthenticated$ | async)" >
             {{ 'zi7.menu.login' | translate }}
           </button>
 

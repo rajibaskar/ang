@@ -1,5 +1,5 @@
 import browser from 'browser-detect';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -51,17 +51,15 @@ export class AppComponent implements OnInit {
   language$: Observable<string>;
   theme$: Observable<string>;
 
-  @ViewChild('googleBtn')
-  googleBtnEl: ElementRef;
-
-  private clientId = 'YOUR_CLIENT_ID.apps.googleusercontent.com';
+  private clientId =
+    '170381248222-isn7ntpq8l5k0omlmlf8bhsf1iq8j1br.apps.googleusercontent.com';
 
   private scope = [
     'profile',
-    'email',
-    'https://www.googleapis.com/auth/plus.me',
-    'https://www.googleapis.com/auth/contacts.readonly',
-    'https://www.googleapis.com/auth/admin.directory.user.readonly'
+    'email'
+    // 'https://www.googleapis.com/auth/plus.me',
+    // 'https://www.googleapis.com/auth/contacts.readonly',
+    // 'https://www.googleapis.com/auth/admin.directory.user.readonly'
   ].join(' ');
 
   public auth2: any;
@@ -92,6 +90,7 @@ export class AppComponent implements OnInit {
     this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
+
   /*
   onLoginClick() {
     this.store.dispatch(new ActionAuthLogin());
@@ -117,19 +116,17 @@ export class AppComponent implements OnInit {
   }
 
   public attachSignin() {
-    this.auth2.attachClickHandler(
-      this.googleBtnEl.nativeElement,
-      {},
-      googleUser => {
+    this.auth2
+      .signIn()
+      .then(googleUser => {
         const profile = googleUser.getBasicProfile();
         console.log('Token || ' + googleUser.getAuthResponse().id_token);
         console.log('ID: ' + profile.getId());
         // ...
         this.store.dispatch(new ActionAuthLogin());
-      },
-      function(error) {
+      })
+      .catch(error => {
         console.log(JSON.stringify(error, undefined, 2));
-      }
-    );
+      });
   }
 }
