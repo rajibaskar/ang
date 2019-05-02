@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
-import { TodosActions, TodosActionTypes } from './todos.actions';
-import { Todo, TodosState } from './todos.model';
+import { TodosActions, TodosActionTypes } from './editor.actions';
+import { Todo, TodosState } from './editor.model';
 
 export const initialState: TodosState = {
   items: [

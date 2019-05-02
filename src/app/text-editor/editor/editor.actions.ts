@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { Action } from '@ngrx/store';
 
-import { TodosFilter, TodosState } from './todos.model';
+import { TodosFilter, TodosState } from './editor.model';
 
 export enum TodosActionTypes {
   ADD = '[Todos] Add',

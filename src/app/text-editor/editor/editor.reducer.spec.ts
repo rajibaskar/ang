@@ -1,5 +1,5 @@
-import { todosReducer, initialState } from './todos.reducer';
-import { TodosState } from './todos.model';
+import { todosReducer, initialState } from './editor.reducer';
+import { TodosState } from './editor.model';
 import {
   ActionTodosAdd,
   ActionTodosFilter,

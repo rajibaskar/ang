@@ -4,7 +4,7 @@ import {
   ActionTodosRemoveDone,
   ActionTodosToggle,
   TodosActionTypes
-} from './todos.actions';
+} from './editor.actions';
 
 describe('Todos Actions', () => {
   describe('TodosAdd', () => {

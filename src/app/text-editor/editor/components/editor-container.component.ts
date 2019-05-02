@@ -12,15 +12,15 @@ import {
   ActionTodosFilter,
   ActionTodosRemoveDone,
   ActionTodosToggle
-} from '../todos.actions';
-import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
-import { Todo, TodosFilter } from '../todos.model';
+} from '../editor.actions';
+import { selectTodos, selectRemoveDoneTodosDisabled } from '../editor.selectors';
+import { Todo, TodosFilter } from '../editor.model';
 import { State } from '../../text-editor.state';
 
 @Component({
   selector: 'zi7-todos',
-  templateUrl: './todos-container.component.html',
-  styleUrls: ['./todos-container.component.scss'],
+  templateUrl: './editor-container.component.html',
+  styleUrls: ['./editor-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosContainerComponent implements OnInit {

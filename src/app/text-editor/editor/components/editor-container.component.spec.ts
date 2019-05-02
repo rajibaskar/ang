@@ -14,10 +14,10 @@ import {
   ActionTodosFilter,
   ActionTodosRemoveDone,
   ActionTodosToggle
-} from '../todos.actions';
-import { TodosState } from '../todos.model';
+} from '../editor.actions';
+import { TodosState } from '../editor.model';
 import { TodosContainerComponent } from './todos-container.component';
-import { State } from '../../applications.state';
+import { State } from '../../text-editor.state';
 
 describe('TodosComponent', () => {
   let component: RenderResult;

@@ -4,10 +4,10 @@ import { Store } from '@ngrx/store';
 import { cold } from 'jasmine-marbles';
 import { of } from 'rxjs';
 
-import { State } from '../applications.state';
-import { ActionTodosToggle } from './todos.actions';
-import { TodosEffects, TODOS_KEY } from './todos.effects';
-import { TodosState } from './todos.model';
+import { State } from '../text-editor.state';
+import { ActionTodosToggle } from './editor.actions';
+import { TodosEffects, TODOS_KEY } from './editor.effects';
+import { TodosState } from './editor.model';
 
 describe('TodosEffects', () => {
   let localStorage: jasmine.SpyObj<LocalStorageService>;

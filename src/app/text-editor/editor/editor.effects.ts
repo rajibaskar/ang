@@ -6,8 +6,8 @@ import { tap, withLatestFrom } from 'rxjs/operators';
 import { LocalStorageService } from '@app/core';
 
 import { State } from '../text-editor.state';
-import { TodosActionTypes } from './todos.actions';
-import { selectTodosState } from './todos.selectors';
+import { TodosActionTypes } from './editor.actions';
+import { selectTodosState } from './editor.selectors';
 
 export const TODOS_KEY = 'EXAMPLES.TODOS';
 

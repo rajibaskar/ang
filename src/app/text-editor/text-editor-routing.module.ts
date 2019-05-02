@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { TodosContainerComponent } from './editor/components/todos-container.component';
+import { TodosContainerComponent } from './editor/components/editor-container.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleHomeComponent } from './module-home/module-home.component';
 
