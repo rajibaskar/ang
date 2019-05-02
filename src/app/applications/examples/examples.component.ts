@@ -6,9 +6,9 @@ import { map } from 'rxjs/operators';
 import { routeAnimations, selectAuth } from '@app/core';
 import { State as BaseSettingsState } from '@app/settings';
 
-import { State as BaseExamplesState } from '../examples.state';
+import { State as BaseApplicationsState } from '../applications.state';
 
-interface State extends BaseSettingsState, BaseExamplesState {}
+interface State extends BaseSettingsState, BaseApplicationsState {}
 
 @Component({
   selector: 'zi7-examples',

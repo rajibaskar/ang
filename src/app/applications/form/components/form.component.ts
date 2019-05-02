@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 
 import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
 
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 import { ActionFormUpdate, ActionFormReset } from '../form.actions';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';

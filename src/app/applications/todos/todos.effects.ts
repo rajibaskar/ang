@@ -5,7 +5,7 @@ import { tap, withLatestFrom } from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
 
-import { State } from '../examples.state';
+import { State } from '../applications.state';
 import { TodosActionTypes } from './todos.actions';
 import { selectTodosState } from './todos.selectors';
 

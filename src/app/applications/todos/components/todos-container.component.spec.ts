@@ -17,7 +17,7 @@ import {
 } from '../todos.actions';
 import { TodosState } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 
 describe('TodosComponent', () => {
   let component: RenderResult;

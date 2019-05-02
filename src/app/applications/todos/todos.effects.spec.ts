@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { cold } from 'jasmine-marbles';
 import { of } from 'rxjs';
 
-import { State } from '../examples.state';
+import { State } from '../applications.state';
 import { ActionTodosToggle } from './todos.actions';
 import { TodosEffects, TODOS_KEY } from './todos.effects';
 import { TodosState } from './todos.model';

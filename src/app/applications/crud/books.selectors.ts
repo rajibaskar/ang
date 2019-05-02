@@ -4,8 +4,8 @@ import { selectRouterState } from '@app/core';
 
 import {
   selectExamples,
-  ExamplesState
-} from '../../applications/examples.state';
+  ApplicationsState
+} from '../../applications/applications.state';
 
 import { bookAdapter } from './books.reducer';
 
@@ -13,7 +13,7 @@ const { selectEntities, selectAll } = bookAdapter.getSelectors();
 
 export const selectBooks = createSelector(
   selectExamples,
-  (state: ExamplesState) => state.books
+  (state: ApplicationsState) => state.books
 );
 
 export const selectAllBooks = createSelector(selectBooks, selectAll);

@@ -7,8 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from '@app/shared';
 import { environment } from '@env/environment';
 
-import { FEATURE_NAME, reducers } from './examples.state';
-import { ExamplesRoutingModule } from './examples-routing.module';
+import { FEATURE_NAME, reducers } from './applications.state';
+import { ApplicationsRoutingModule } from './applications-routing.module';
 import { ExamplesComponent } from './examples/examples.component';
 import { TodosContainerComponent } from './todos/components/todos-container.component';
 import { TodosEffects } from './todos/todos.effects';
@@ -23,13 +23,13 @@ import { FormComponent } from './form/components/form.component';
 import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
-import { ExamplesEffects } from './examples.effects';
+import { ApplicationsEffects } from './applications.effects';
 import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
     SharedModule,
-    ExamplesRoutingModule,
+    ApplicationsRoutingModule,
     StoreModule.forFeature(FEATURE_NAME, reducers),
     TranslateModule.forChild({
       loader: {
@@ -40,7 +40,7 @@ import { HttpClient } from '@angular/common/http';
       isolate: true
     }),
     EffectsModule.forFeature([
-      ExamplesEffects,
+      ApplicationsEffects,
       TodosEffects,
       StockMarketEffects,
       BooksEffects,
@@ -60,7 +60,7 @@ import { HttpClient } from '@angular/common/http';
   ],
   providers: [StockMarketService]
 })
-export class ExamplesModule {
+export class ApplicationsModule {
   constructor() {}
 }
 

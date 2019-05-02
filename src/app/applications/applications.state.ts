@@ -11,17 +11,17 @@ import { FormState } from './form/form.model';
 import { Book, BookState } from './crud/books.model';
 
 export const FEATURE_NAME = 'examples';
-export const selectExamples = createFeatureSelector<State, ExamplesState>(
+export const selectExamples = createFeatureSelector<State, ApplicationsState>(
   FEATURE_NAME
 );
-export const reducers: ActionReducerMap<ExamplesState> = {
+export const reducers: ActionReducerMap<ApplicationsState> = {
   todos: todosReducer,
   stocks: stockMarketReducer,
   books: bookReducer,
   form: formReducer
 };
 
-export interface ExamplesState {
+export interface ApplicationsState {
   todos: TodosState;
   stocks: StockMarketState;
   form: FormState;
@@ -29,5 +29,5 @@ export interface ExamplesState {
 }
 
 export interface State extends AppState {
-  examples: ExamplesState;
+  examples: ApplicationsState;
 }

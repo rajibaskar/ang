@@ -15,7 +15,7 @@ import {
 } from '@app/settings';
 
 @Injectable()
-export class ExamplesEffects {
+export class ApplicationsEffects {
   constructor(
     private actions$: Actions<SettingsActions>,
     private store: Store<State>,

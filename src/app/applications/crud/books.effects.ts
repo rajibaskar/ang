@@ -5,7 +5,7 @@ import { tap, withLatestFrom } from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
 
-import { State } from '../examples.state';
+import { State } from '../applications.state';
 import { BookActionTypes } from './books.actions';
 import { selectBooks } from './books.selectors';
 

@@ -7,7 +7,7 @@ import { EMPTY } from 'rxjs';
 import { TestingModule, MockStore } from '@testing/utils';
 import { CoreModule } from '@app/core';
 
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 import { StockMarketService } from '../stock-market.service';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';

@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CoreModule } from '@app/core';
 import { MockStore, TestingModule } from '@testing/utils';
 
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 import { BookState } from '../books.model';
 import { CrudComponent } from './crud.component';
 

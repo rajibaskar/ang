@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'examples',
-    loadChildren: 'app/applications/examples.module#ExamplesModule'
+    loadChildren: 'app/applications/applications.module#ApplicationsModule'
   },
   {
     path: '**',

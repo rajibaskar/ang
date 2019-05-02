@@ -8,7 +8,7 @@ import {
 import { MockStore, TestingModule } from '@testing/utils';
 import { NotificationService } from '@app/core';
 
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 import { FormState } from '../form.model';
 import { FormComponent } from './form.component';
 import { initialState } from '../form.reducer';

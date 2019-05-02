@@ -7,7 +7,7 @@ import { Store, select } from '@ngrx/store';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 import { Book } from '../books.model';
 import { ActionBooksUpsertOne, ActionBooksDeleteOne } from '../books.actions';
 import { selectSelectedBook, selectAllBooks } from '../books.selectors';

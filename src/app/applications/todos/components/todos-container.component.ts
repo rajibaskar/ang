@@ -15,7 +15,7 @@ import {
 } from '../todos.actions';
 import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
-import { State } from '../../examples.state';
+import { State } from '../../applications.state';
 
 @Component({
   selector: 'zi7-todos',
