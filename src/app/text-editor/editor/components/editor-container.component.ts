@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
 
 import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
+  ActionTextModelAdd,
+  ActionTextModelFilter,
+  ActionTextModelRemoveDone,
+  ActionTextModelToggle
 } from '../editor.actions';
 import { selectTodos, selectRemoveDoneTodosDisabled } from '../editor.selectors';
-import { Todo, TodosFilter } from '../editor.model';
+import { TextModel, TextModelFilter } from '../editor.model';
 import { State } from '../../text-editor.state';
 
 @Component({
@@ -25,7 +25,7 @@ import { State } from '../../text-editor.state';
 })
 export class TodosContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  todos$: Observable<Todo[]>;
+  todos$: Observable<TextModel[]>;
   removeDoneDisabled$: Observable<boolean>;
   newTodo = '';
 
@@ -56,7 +56,7 @@ export class TodosContainerComponent implements OnInit {
   }
 
   onAddTodo() {
-    this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
+    this.store.dispatch(new ActionTextModelAdd({ name: this.newTodo }));
     const addedMessage = this.translateService.instant(
       'zi7.examples.todos.added.notification',
       { name: this.newTodo }
@@ -65,15 +65,15 @@ export class TodosContainerComponent implements OnInit {
     this.newTodo = '';
   }
 
-  onToggleTodo(todo: Todo) {
-    this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
+  onToggleTodo(textModel: TextModel) {
+    this.store.dispatch(new ActionTextModelToggle({ id: textModel.id }));
     const newStatus = this.translateService.instant(
-      `zi7.examples.todos.filter.${todo.done ? 'active' : 'done'}`
+      `zi7.examples.todos.filter.${textModel.done ? 'active' : 'done'}`
     );
     const undo = this.translateService.instant('zi7.examples.todos.undo');
     const toggledMessage = this.translateService.instant(
       'zi7.examples.todos.toggle.notification',
-      { name: todo.name }
+      { name: textModel.name }
     );
 
     this.snackBar
@@ -83,19 +83,19 @@ export class TodosContainerComponent implements OnInit {
       })
       .onAction()
       .pipe(take(1))
-      .subscribe(() => this.onToggleTodo({ ...todo, done: !todo.done }));
+      .subscribe(() => this.onToggleTodo({ ...textModel, done: !textModel.done }));
   }
 
   onRemoveDoneTodos() {
-    this.store.dispatch(new ActionTodosRemoveDone());
+    this.store.dispatch(new ActionTextModelRemoveDone());
     const removedMessage = this.translateService.instant(
       'zi7.examples.todos.remove.notification'
     );
     this.notificationService.info(removedMessage);
   }
 
-  onFilterTodos(filter: TodosFilter) {
-    this.store.dispatch(new ActionTodosFilter({ filter }));
+  onFilterTodos(filter: TextModelFilter) {
+    this.store.dispatch(new ActionTextModelFilter({ filter }));
     const filterToMessage = this.translateService.instant(
       'zi7.examples.todos.filter.notification'
     );

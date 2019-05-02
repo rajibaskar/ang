@@ -11,11 +11,11 @@ import { MockStore, TestingModule } from '@testing/utils';
 import { NotificationService } from '@app/core';
 
 import {
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
+  ActionTextModelFilter,
+  ActionTextModelRemoveDone,
+  ActionTextModelToggle
 } from '../editor.actions';
-import { TodosState } from '../editor.model';
+import { TextModelState } from '../editor.model';
 import { TodosContainerComponent } from './todos-container.component';
 import { State } from '../../text-editor.state';
 
@@ -73,7 +73,7 @@ describe('TodosComponent', () => {
     component.click(component.queryByLabelText('remove done items'));
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith(new ActionTodosRemoveDone());
+    expect(dispatchSpy).toHaveBeenCalledWith(new ActionTextModelRemoveDone());
   });
 
   it('should dispatch add todo action', () => {
@@ -117,7 +117,7 @@ describe('TodosComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosFilter({ filter: 'ACTIVE' })
+      new ActionTextModelFilter({ filter: 'ACTIVE' })
     );
   });
 
@@ -135,7 +135,7 @@ describe('TodosComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosToggle({ id: '1' })
+      new ActionTextModelToggle({ id: '1' })
     );
   });
 
@@ -206,10 +206,10 @@ describe('TodosComponent', () => {
   });
 });
 
-function createState(todoState: TodosState) {
+function createState(textModelState: TextModelState) {
   return {
     examples: {
-      todos: todoState
+      todos: textModelState
     }
   } as State;
 }

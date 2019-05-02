@@ -1,17 +1,17 @@
 import { v4 as uuid } from 'uuid';
 import { Action } from '@ngrx/store';
 
-import { TodosFilter, TodosState } from './editor.model';
+import { TextModelFilter, TextModelState } from './editor.model';
 
-export enum TodosActionTypes {
-  ADD = '[Todos] Add',
-  TOGGLE = '[Todos] Toggle',
-  REMOVE_DONE = '[Todos] Remove Done',
-  FILTER = '[Todos] Filter'
+export enum TextModelActionTypes {
+  ADD = '[TextEditor] Add',
+  TOGGLE = '[TextEditor] Toggle',
+  REMOVE_DONE = '[TextEditor] Remove Done',
+  FILTER = '[TextEditor] Filter'
 }
 
-export class ActionTodosAdd implements Action {
-  readonly type = TodosActionTypes.ADD;
+export class ActionTextModelAdd implements Action {
+  readonly type = TextModelActionTypes.ADD;
   readonly payload: { id: string; name: string };
 
   constructor({ id = uuid(), name = '' }: { id?: string; name: string }) {
@@ -19,24 +19,24 @@ export class ActionTodosAdd implements Action {
   }
 }
 
-export class ActionTodosToggle implements Action {
-  readonly type = TodosActionTypes.TOGGLE;
+export class ActionTextModelToggle implements Action {
+  readonly type = TextModelActionTypes.TOGGLE;
 
   constructor(readonly payload: { id: string }) {}
 }
 
-export class ActionTodosRemoveDone implements Action {
-  readonly type = TodosActionTypes.REMOVE_DONE;
+export class ActionTextModelRemoveDone implements Action {
+  readonly type = TextModelActionTypes.REMOVE_DONE;
 }
 
-export class ActionTodosFilter implements Action {
-  readonly type = TodosActionTypes.FILTER;
+export class ActionTextModelFilter implements Action {
+  readonly type = TextModelActionTypes.FILTER;
 
-  constructor(readonly payload: { filter: TodosFilter }) {}
+  constructor(readonly payload: { filter: TextModelFilter }) {}
 }
 
-export type TodosActions =
-  | ActionTodosAdd
-  | ActionTodosToggle
-  | ActionTodosRemoveDone
-  | ActionTodosFilter;
+export type TextModelActions =
+  | ActionTextModelAdd
+  | ActionTextModelToggle
+  | ActionTextModelRemoveDone
+  | ActionTextModelFilter;

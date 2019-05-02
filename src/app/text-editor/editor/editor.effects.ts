@@ -6,13 +6,13 @@ import { tap, withLatestFrom } from 'rxjs/operators';
 import { LocalStorageService } from '@app/core';
 
 import { State } from '../text-editor.state';
-import { TodosActionTypes } from './editor.actions';
+import { TextModelActionTypes } from './editor.actions';
 import { selectTodosState } from './editor.selectors';
 
 export const TODOS_KEY = 'EXAMPLES.TODOS';
 
 @Injectable()
-export class TodosEffects {
+export class TextModelEffects {
   constructor(
     private actions$: Actions<Action>,
     private store: Store<State>,
@@ -22,10 +22,10 @@ export class TodosEffects {
   @Effect({ dispatch: false })
   persistTodos = this.actions$.pipe(
     ofType(
-      TodosActionTypes.ADD,
-      TodosActionTypes.FILTER,
-      TodosActionTypes.REMOVE_DONE,
-      TodosActionTypes.TOGGLE
+      TextModelActionTypes.ADD,
+      TextModelActionTypes.FILTER,
+      TextModelActionTypes.REMOVE_DONE,
+      TextModelActionTypes.TOGGLE
     ),
     withLatestFrom(this.store.pipe(select(selectTodosState))),
     tap(([action, todos]) => this.localStorageService.setItem(TODOS_KEY, todos))

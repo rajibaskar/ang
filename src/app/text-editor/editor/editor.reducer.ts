@@ -1,9 +1,9 @@
 import { v4 as uuid } from 'uuid';
 
-import { TodosActions, TodosActionTypes } from './editor.actions';
-import { Todo, TodosState } from './editor.model';
+import { TextModelActions, TextModelActionTypes } from './editor.actions';
+import { TextModel, TextModelState } from './editor.model';
 
-export const initialState: TodosState = {
+export const initialState: TextModelState = {
   items: [
     { id: uuid(), name: 'Open Todo list example', done: true },
     { id: uuid(), name: 'Check the other examples', done: false },
@@ -16,12 +16,12 @@ export const initialState: TodosState = {
   filter: 'ALL'
 };
 
-export function todosReducer(
-  state: TodosState = initialState,
-  action: TodosActions
-): TodosState {
+export function textModelReducer(
+  state: TextModelState = initialState,
+  action: TextModelActions
+): TextModelState {
   switch (action.type) {
-    case TodosActionTypes.ADD:
+    case TextModelActionTypes.ADD:
       return {
         ...state,
         items: [
@@ -34,22 +34,22 @@ export function todosReducer(
         ]
       };
 
-    case TodosActionTypes.TOGGLE:
+    case TextModelActionTypes.TOGGLE:
       return {
         ...state,
         items: state.items.map(
-          (item: Todo) =>
+          (item: TextModel) =>
             item.id === action.payload.id ? { ...item, done: !item.done } : item
         )
       };
 
-    case TodosActionTypes.REMOVE_DONE:
+    case TextModelActionTypes.REMOVE_DONE:
       return {
         ...state,
-        items: state.items.filter((item: Todo) => !item.done)
+        items: state.items.filter((item: TextModel) => !item.done)
       };
 
-    case TodosActionTypes.FILTER:
+    case TextModelActionTypes.FILTER:
       return { ...state, filter: action.payload.filter };
 
     default:

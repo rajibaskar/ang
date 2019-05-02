@@ -1,12 +1,12 @@
-export interface Todo {
+export interface TextModel {
   id: string;
   name: string;
   done: boolean;
 }
 
-export type TodosFilter = 'ALL' | 'DONE' | 'ACTIVE';
+export type TextModelFilter = 'ALL' | 'DONE' | 'ACTIVE';
 
-export interface TodosState {
-  items: Todo[];
-  filter: TodosFilter;
+export interface TextModelState {
+  items: TextModel[];
+  filter: TextModelFilter;
 }

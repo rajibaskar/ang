@@ -5,11 +5,11 @@ import { cold } from 'jasmine-marbles';
 import { of } from 'rxjs';
 
 import { State } from '../text-editor.state';
-import { ActionTodosToggle } from './editor.actions';
-import { TodosEffects, TODOS_KEY } from './editor.effects';
-import { TodosState } from './editor.model';
+import { ActionTextModelToggle } from './editor.actions';
+import { TextModelEffects, TODOS_KEY } from './editor.effects';
+import { TextModelState } from './editor.model';
 
-describe('TodosEffects', () => {
+describe('TextModelEffects', () => {
   let localStorage: jasmine.SpyObj<LocalStorageService>;
   let store: jasmine.SpyObj<Store<State>>;
 
@@ -21,27 +21,27 @@ describe('TodosEffects', () => {
   describe('persistTodos', () => {
     it('should not dispatch any action', () => {
       const actions$ = new Actions();
-      const effect = new TodosEffects(actions$, store, localStorage);
+      const effect = new TextModelEffects(actions$, store, localStorage);
       const metadata = getEffectsMetadata(effect);
 
       expect(metadata.persistTodos).toEqual({ dispatch: false });
     });
 
     it('should call setItem on LocalStorageService for any action', () => {
-      const todosState: TodosState = {
+      const textModelState: TextModelState = {
         items: [{ id: '1', name: 'Test ToDo', done: false }],
         filter: 'ALL'
       };
-      store.pipe.and.returnValue(of(todosState));
-      const persistAction = new ActionTodosToggle({ id: 'a' });
+      store.pipe.and.returnValue(of(textModelState));
+      const persistAction = new ActionTextModelToggle({ id: 'a' });
       const source = cold('a', { a: persistAction });
       const actions = new Actions(source);
-      const effect = new TodosEffects(actions, store, localStorage);
+      const effect = new TextModelEffects(actions, store, localStorage);
 
       effect.persistTodos.subscribe(() => {
         expect(localStorage.setItem).toHaveBeenCalledWith(
           TODOS_KEY,
-          todosState
+          textModelState
         );
       });
     });

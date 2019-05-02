@@ -1,31 +1,31 @@
 import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle,
-  TodosActionTypes
+  ActionTextModelAdd,
+  ActionTextModelFilter,
+  ActionTextModelRemoveDone,
+  ActionTextModelToggle,
+  TextModelActionTypes
 } from './editor.actions';
 
 describe('Todos Actions', () => {
   describe('TodosAdd', () => {
     it('should create an action', () => {
-      const action = new ActionTodosAdd({ name: 'test' });
+      const action = new ActionTextModelAdd({ name: 'test' });
       expect(action.payload).toEqual(
         jasmine.objectContaining({
           name: 'test'
         })
       );
-      expect(action.type).toEqual(TodosActionTypes.ADD);
+      expect(action.type).toEqual(TextModelActionTypes.ADD);
       expect(action.payload.id).toBeDefined();
     });
   });
 
   describe('ActionTodosToggle', () => {
     it('should create an action', () => {
-      const action = new ActionTodosToggle({ id: '1' });
+      const action = new ActionTextModelToggle({ id: '1' });
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.TOGGLE,
+        type: TextModelActionTypes.TOGGLE,
         payload: { id: '1' }
       });
     });
@@ -33,20 +33,20 @@ describe('Todos Actions', () => {
 
   describe('ActionTodosRemoveDone', () => {
     it('should create an action', () => {
-      const action = new ActionTodosRemoveDone();
+      const action = new ActionTextModelRemoveDone();
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.REMOVE_DONE
+        type: TextModelActionTypes.REMOVE_DONE
       });
     });
   });
 
   describe('ActionTodosFilter', () => {
     it('should create an action', () => {
-      const action = new ActionTodosFilter({ filter: 'DONE' });
+      const action = new ActionTextModelFilter({ filter: 'DONE' });
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.FILTER,
+        type: TextModelActionTypes.FILTER,
         payload: { filter: 'DONE' }
       });
     });
