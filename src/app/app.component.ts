@@ -39,7 +39,8 @@ export class AppComponent implements OnInit {
   navigation = [
     { link: 'about', label: 'zi7.menu.about' },
     { link: 'features', label: 'zi7.menu.features' },
-    { link: 'examples', label: 'zi7.menu.examples' }
+    { link: 'examples', label: 'zi7.menu.examples' },
+    { link: 'text-editor', label: 'zi7.menu.text-editor' }
   ];
   navigationSideMenu = [
     ...this.navigation,

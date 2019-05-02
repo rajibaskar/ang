@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: 'app/applications/applications.module#ApplicationsModule'
   },
   {
+    path: 'text-editor',
+    loadChildren: 'app/text-editor/text-editor.module#TextEditorModule'
+  },
+  {
     path: '**',
     redirectTo: 'about'
   }
@@ -28,7 +32,7 @@ const routes: Routes = [
   // useHash supports github.io demo page, remove in your app
   imports: [
     RouterModule.forRoot(routes, {
-      useHash: true,
+      // useHash: true,
       scrollPositionRestoration: 'enabled'
     })
   ],
