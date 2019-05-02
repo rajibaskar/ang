@@ -9,8 +9,8 @@ import { environment } from '@env/environment';
 
 import { FEATURE_NAME, reducers } from './text-editor.state';
 import { ApplicationsRoutingModule } from './text-editor-routing.module';
-import { TodosContainerComponent } from './todos/components/todos-container.component';
-import { TodosEffects } from './todos/todos.effects';
+import { TodosContainerComponent } from './editor/components/todos-container.component';
+import { TodosEffects } from './editor/todos.effects';
 import { ApplicationsEffects } from './text-editor.effects';
 import { HttpClient } from '@angular/common/http';
 import { ModuleHomeComponent } from './module-home/module-home.component';

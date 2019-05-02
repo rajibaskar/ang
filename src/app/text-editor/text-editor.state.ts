@@ -1,8 +1,8 @@
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import { AppState } from '@app/core';
 
-import { todosReducer } from './todos/todos.reducer';
-import { TodosState } from './todos/todos.model';
+import { todosReducer } from './editor/todos.reducer';
+import { TodosState } from './editor/todos.model';
 
 export const FEATURE_NAME = 'examples';
 export const selectExamples = createFeatureSelector<State, ApplicationsState>(
