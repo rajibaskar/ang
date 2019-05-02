@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -25,6 +24,7 @@ import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
 import { ExamplesEffects } from './examples.effects';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
