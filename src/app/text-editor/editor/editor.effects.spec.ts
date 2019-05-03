@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 
 import { State } from '../text-editor.state';
 import { ActionTextModelToggle } from './editor.actions';
-import { TextModelEffects, TODOS_KEY } from './editor.effects';
+import { TextModelEffects, TEXT_EDITOR_KEY } from './editor.effects';
 import { TextModelState } from './editor.model';
 
 describe('TextModelEffects', () => {
@@ -18,7 +18,7 @@ describe('TextModelEffects', () => {
     store = jasmine.createSpyObj('store', ['pipe']);
   });
 
-  describe('persistTodos', () => {
+  describe('persistTextEditor', () => {
     it('should not dispatch any action', () => {
       const actions$ = new Actions();
       const effect = new TextModelEffects(actions$, store, localStorage);
@@ -40,7 +40,7 @@ describe('TextModelEffects', () => {
 
       effect.persistTodos.subscribe(() => {
         expect(localStorage.setItem).toHaveBeenCalledWith(
-          TODOS_KEY,
+          TEXT_EDITOR_KEY,
           textModelState
         );
       });

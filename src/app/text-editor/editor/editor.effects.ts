@@ -7,9 +7,9 @@ import { LocalStorageService } from '@app/core';
 
 import { State } from '../text-editor.state';
 import { TextModelActionTypes } from './editor.actions';
-import { selectTodosState } from './editor.selectors';
+import { selectTextModelState } from './editor.selectors';
 
-export const TODOS_KEY = 'EXAMPLES.TODOS';
+export const TEXT_EDITOR_KEY = 'MODULE.TEXT-EDITOR';
 
 @Injectable()
 export class TextModelEffects {
@@ -27,7 +27,9 @@ export class TextModelEffects {
       TextModelActionTypes.REMOVE_DONE,
       TextModelActionTypes.TOGGLE
     ),
-    withLatestFrom(this.store.pipe(select(selectTodosState))),
-    tap(([action, todos]) => this.localStorageService.setItem(TODOS_KEY, todos))
+    withLatestFrom(this.store.pipe(select(selectTextModelState))),
+    tap(([action, textModels]) =>
+      this.localStorageService.setItem(TEXT_EDITOR_KEY, textModels)
+    )
   );
 }

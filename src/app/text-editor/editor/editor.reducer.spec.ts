@@ -1,13 +1,13 @@
 import { textModelReducer, initialState } from './editor.reducer';
 import { TextModelState } from './editor.model';
 import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
-} from './todos.actions';
+  ActionTextModelAdd,
+  ActionTextModelFilter,
+  ActionTextModelRemoveDone,
+  ActionTextModelToggle
+} from './editor.actions';
 
-describe('TodoReducer', () => {
+describe('TextModelReducer', () => {
   it('should return the default state', () => {
     const action = {} as any;
     const state = textModelReducer(undefined, action);
@@ -15,31 +15,31 @@ describe('TodoReducer', () => {
     expect(state).toBe(initialState);
   });
 
-  it('should add a todo', () => {
+  it('should add a TextModel', () => {
     const TEST_INITIAL_STATE: TextModelState = {
       items: [],
       filter: 'ALL'
     };
-    const action = new ActionTodosAdd({ name: 'Mercuccio' });
+    const action = new ActionTextModelAdd({ name: 'Mercuccio' });
     const state = textModelReducer(TEST_INITIAL_STATE, action);
 
     expect(state.items.length).toEqual(1);
     expect(state.items[0].name).toEqual('Mercuccio');
   });
 
-  it('should toggle selected todo', () => {
+  it('should toggle selected TextModel', () => {
     const TEST_INITIAL_STATE: TextModelState = {
       items: [{ id: '1', name: 'Tibald', done: false }],
       filter: 'ALL'
     };
-    const action = new ActionTodosToggle({
+    const action = new ActionTextModelToggle({
       id: TEST_INITIAL_STATE.items[0].id
     });
     const state = textModelReducer(TEST_INITIAL_STATE, action);
     expect(state.items[0].done).toEqual(true);
   });
 
-  it('should remove done todos', () => {
+  it('should remove done TextModels', () => {
     const TEST_INITIAL_STATE: TextModelState = {
       items: [
         { id: '1', name: 'Romeo', done: false },
@@ -47,14 +47,14 @@ describe('TodoReducer', () => {
       ],
       filter: 'ALL'
     };
-    const action = new ActionTodosRemoveDone();
+    const action = new ActionTextModelRemoveDone();
     const state = textModelReducer(TEST_INITIAL_STATE, action);
     expect(state.items.length).toBe(1);
     expect(state.items[0].name).toBe('Romeo');
     expect(state.items[0].done).toBeFalsy();
   });
 
-  it('should return filtered todos', () => {
+  it('should return filtered TextModels', () => {
     const TEST_INITIAL_STATE: TextModelState = {
       items: [
         { id: '1', name: 'Friar Laurence', done: false },
@@ -63,7 +63,7 @@ describe('TodoReducer', () => {
       ],
       filter: 'ALL'
     };
-    const action = new ActionTodosFilter({ filter: 'DONE' });
+    const action = new ActionTextModelFilter({ filter: 'DONE' });
     const state = textModelReducer(TEST_INITIAL_STATE, action);
 
     expect(state.items.length).toEqual(3); // must not change items collection

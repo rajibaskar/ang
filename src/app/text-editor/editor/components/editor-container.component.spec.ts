@@ -16,7 +16,7 @@ import {
   ActionTextModelToggle
 } from '../editor.actions';
 import { TextModelState } from '../editor.model';
-import { TodosContainerComponent } from './todos-container.component';
+import { TodosContainerComponent } from './editor-container.component';
 import { State } from '../../text-editor.state';
 
 describe('TodosComponent', () => {

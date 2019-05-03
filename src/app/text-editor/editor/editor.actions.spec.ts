@@ -6,8 +6,8 @@ import {
   TextModelActionTypes
 } from './editor.actions';
 
-describe('Todos Actions', () => {
-  describe('TodosAdd', () => {
+describe('TextEditor Actions', () => {
+  describe('TextEditorAdd', () => {
     it('should create an action', () => {
       const action = new ActionTextModelAdd({ name: 'test' });
       expect(action.payload).toEqual(
@@ -20,7 +20,7 @@ describe('Todos Actions', () => {
     });
   });
 
-  describe('ActionTodosToggle', () => {
+  describe('ActionTextModelToggle', () => {
     it('should create an action', () => {
       const action = new ActionTextModelToggle({ id: '1' });
 
@@ -31,7 +31,7 @@ describe('Todos Actions', () => {
     });
   });
 
-  describe('ActionTodosRemoveDone', () => {
+  describe('ActionTextModelRemoveDone', () => {
     it('should create an action', () => {
       const action = new ActionTextModelRemoveDone();
 
@@ -41,7 +41,7 @@ describe('Todos Actions', () => {
     });
   });
 
-  describe('ActionTodosFilter', () => {
+  describe('ActionTextModelFilter', () => {
     it('should create an action', () => {
       const action = new ActionTextModelFilter({ filter: 'DONE' });
 

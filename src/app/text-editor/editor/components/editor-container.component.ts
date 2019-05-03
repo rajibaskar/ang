@@ -13,7 +13,10 @@ import {
   ActionTextModelRemoveDone,
   ActionTextModelToggle
 } from '../editor.actions';
-import { selectTodos, selectRemoveDoneTodosDisabled } from '../editor.selectors';
+import {
+  selectTextModel,
+  selectRemoveDoneTextModelDisabled
+} from '../editor.selectors';
 import { TextModel, TextModelFilter } from '../editor.model';
 import { State } from '../../text-editor.state';
 
@@ -37,9 +40,9 @@ export class TodosContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.todos$ = this.store.pipe(select(selectTodos));
+    this.todos$ = this.store.pipe(select(selectTextModel));
     this.removeDoneDisabled$ = this.store.pipe(
-      select(selectRemoveDoneTodosDisabled)
+      select(selectRemoveDoneTextModelDisabled)
     );
   }
 
@@ -83,7 +86,9 @@ export class TodosContainerComponent implements OnInit {
       })
       .onAction()
       .pipe(take(1))
-      .subscribe(() => this.onToggleTodo({ ...textModel, done: !textModel.done }));
+      .subscribe(() =>
+        this.onToggleTodo({ ...textModel, done: !textModel.done })
+      );
   }
 
   onRemoveDoneTodos() {

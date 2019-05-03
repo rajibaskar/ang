@@ -5,7 +5,7 @@ import { TextModel, TextModelState } from './editor.model';
 
 export const initialState: TextModelState = {
   items: [
-    { id: uuid(), name: 'Open Todo list example', done: true },
+    { id: uuid(), name: 'Open TextModel list example', done: true },
     { id: uuid(), name: 'Check the other examples', done: false },
     {
       id: uuid(),

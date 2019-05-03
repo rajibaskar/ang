@@ -2,24 +2,24 @@ import { createSelector } from '@ngrx/store';
 
 import { ApplicationsState, selectExamples } from '../text-editor.state';
 
-export const selectTodosState = createSelector(
+export const selectTextModelState = createSelector(
   selectExamples,
   (state: ApplicationsState) => state.todos
 );
 
-export const selectTodosItems = createSelector(
-  selectTodosState,
+export const selectTextModelItems = createSelector(
+  selectTextModelState,
   state => state.items
 );
 
-export const selectTodosFilter = createSelector(
-  selectTodosState,
+export const selectTextModelFilter = createSelector(
+  selectTextModelState,
   state => state.filter
 );
 
-export const selectTodos = createSelector(
-  selectTodosItems,
-  selectTodosFilter,
+export const selectTextModel = createSelector(
+  selectTextModelItems,
+  selectTextModelFilter,
   (items, filter) => {
     if (filter === 'ALL') {
       return items;
@@ -30,7 +30,7 @@ export const selectTodos = createSelector(
   }
 );
 
-export const selectRemoveDoneTodosDisabled = createSelector(
-  selectTodosItems,
+export const selectRemoveDoneTextModelDisabled = createSelector(
+  selectTextModelItems,
   items => !items.some(item => item.done)
 );
