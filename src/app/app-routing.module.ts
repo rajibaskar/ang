@@ -18,10 +18,10 @@ const routes: Routes = [
     path: 'examples',
     loadChildren: 'app/applications/applications.module#ApplicationsModule'
   },
- /* {
+  {
     path: 'text-editor',
     loadChildren: 'app/text-editor/text-editor.module#TextEditorModule'
-  },*/
+  },
   {
     path: '**',
     redirectTo: 'about'

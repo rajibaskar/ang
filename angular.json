@@ -180,6 +180,9 @@
         }
       }
     }
-  },
-  "defaultProject": "zi7-office-apps"
+   },
+  "defaultProject": "zi7-office-apps",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
