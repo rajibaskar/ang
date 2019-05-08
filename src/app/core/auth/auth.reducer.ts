@@ -2,7 +2,9 @@ import { AuthState } from './auth.models';
 import { AuthActions, AuthActionTypes } from './auth.actions';
 
 export const initialState: AuthState = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  basicProfile: null,
+  googleAuth: null
 };
 
 export function authReducer(
@@ -11,10 +13,20 @@ export function authReducer(
 ): AuthState {
   switch (action.type) {
     case AuthActionTypes.LOGIN:
-      return { ...state, isAuthenticated: true };
+      return {
+        ...state,
+        isAuthenticated: true,
+        basicProfile: action.payload.basicProfile,
+        googleAuth: action.payload.googleAuth
+      };
 
     case AuthActionTypes.LOGOUT:
-      return { ...state, isAuthenticated: false };
+      return {
+        ...state,
+        isAuthenticated: false,
+        googleAuth: null,
+        basicProfile: null
+      };
 
     default:
       return state;

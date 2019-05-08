@@ -1,4 +1,6 @@
 import { Action } from '@ngrx/store';
+import { BasicProfile } from '../google-auth/basic-profile';
+import { GoogleAuth } from '../google-auth/google-auth';
 
 export enum AuthActionTypes {
   LOGIN = '[Auth] Login',
@@ -7,6 +9,9 @@ export enum AuthActionTypes {
 
 export class ActionAuthLogin implements Action {
   readonly type = AuthActionTypes.LOGIN;
+  constructor(
+    public payload: { basicProfile: BasicProfile; googleAuth: GoogleAuth }
+  ) {}
 }
 
 export class ActionAuthLogout implements Action {

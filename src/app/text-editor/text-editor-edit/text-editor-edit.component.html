@@ -1,3 +1,33 @@
-<p>
-  text-editor-edit works!
-</p>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <mat-card>
+        <form>
+            <div class="row">
+              <mat-form-field class="col">
+                <input matInput placeholder="fileName">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col">
+                <textarea matInput cdkTextareaAutosize
+                        cdkAutosizeMinRows="10"
+                        cdkAutosizeMaxRows="15"
+                        placeholder="Text"></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="row buttons d-flex justify-content-between pad">
+                <button mat-raised-button color="primary" (click)="saveFile()">
+                  {{ 'zi7.examples.form.send' | translate }}
+                </button>
+                <button type="button" mat-raised-button color="accent" >
+                  {{ 'zi7.examples.form.save' | translate }}
+                </button>
+                <button type="reset" mat-raised-button >
+                  {{ 'zi7.examples.form.reset' | translate }}
+                </button>
+              </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

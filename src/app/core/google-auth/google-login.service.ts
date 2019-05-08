@@ -1,87 +1,85 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BasicProfile } from './basic-profile';
+import { GoogleAuth } from './google-auth';
+import { AppState } from '../core.state';
+import { Store } from '@ngrx/store';
+import { ActionAuthLogin } from '..';
 
 declare const gapi: any;
+
+const scope = [
+  'profile',
+  'email',
+  'https://www.googleapis.com/auth/drive',
+  'https://www.googleapis.com/auth/drive.metadata',
+  'https://www.googleapis.com/auth/drive.metadata.readonly',
+  'https://www.googleapis.com/auth/drive.photos.readonly',
+  'https://www.googleapis.com/auth/drive.scripts',
+  'https://www.googleapis.com/auth/drive.appdata',
+  'https://www.googleapis.com/auth/drive.file'
+].join(' ');
+
+const clientId =
+  '170381248222-isn7ntpq8l5k0omlmlf8bhsf1iq8j1br.apps.googleusercontent.com';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GoogleLoginService {
-  private scope = [
-    'profile',
-    'email',
-    'https://www.googleapis.com/auth/drive',
-    'https://www.googleapis.com/auth/drive.metadata',
-    'https://www.googleapis.com/auth/drive.metadata.readonly',
-    'https://www.googleapis.com/auth/drive.photos.readonly',
-    'https://www.googleapis.com/auth/drive.scripts',
-    'https://www.googleapis.com/auth/drive.appdata',
-    'https://www.googleapis.com/auth/drive.file'
-  ].join(' ');
+  private auth2: any;
 
-  private clientId =
-    '170381248222-isn7ntpq8l5k0omlmlf8bhsf1iq8j1br.apps.googleusercontent.com';
-
-  public auth2: any;
-
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   public googleInit() {
-    this.getGAPI().load('auth2', () => {
+    this.getGAPI().load('client:auth2', () => {
       this.auth2 = this.getGAPI().auth2.init({
-        client_id: this.clientId,
-        cookiepolicy: 'single_host_origin',
-        scope: this.scope
+        client_id: clientId,
+        cookie_policy: 'single_host_origin',
+        scope: scope
       });
       this.attachSignIn();
     });
   }
 
-  public attachSignIn(): Observable<boolean> {
-    return Observable.create(observer => {
-      this.auth2
-        .signIn()
-        .then(googleUser => {
-          const profile = googleUser.getBasicProfile();
-          console.log('Token || ' + googleUser.getAuthResponse().id_token);
-          console.log(
-            'access_token || ' + googleUser.getAuthResponse().access_token
-          );
-          console.log('scope || ' + googleUser.getAuthResponse().scope);
-          console.log(
-            'expires_in || ' + googleUser.getAuthResponse().expires_in
-          );
-          console.log(
-            'first_issued_at || ' + googleUser.getAuthResponse().first_issued_at
-          );
-          console.log(
-            'expires_at || ' + googleUser.getAuthResponse().expires_at
-          );
-          console.log(
-            'expires_in || ' + googleUser.getAuthResponse().expires_in
-          );
+  public attachSignIn(): void {
+    this.auth2
+      .signIn()
+      .then(googleUser => {
+        const basicProfile = this.setBasicProfile(googleUser.getBasicProfile());
+        const googleAuth = this.setGoogleAuth(googleUser.getAuthResponse());
 
-          console.log('ID: ' + profile.getId());
-          console.log('getName: ' + profile.getName());
-          console.log('getGivenName: ' + profile.getGivenName());
-          console.log('getFamilyName: ' + profile.getFamilyName());
-          console.log('getImageUrl: ' + profile.getImageUrl());
-          console.log('getEmail: ' + profile.getEmail());
-
-          console.log(profile);
-
-          observer.next(true);
-          observer.complete();
-        })
-        .catch(error => {
-          console.log(JSON.stringify(error, undefined, 2));
-          observer.next(false);
-          observer.complete();
-        });
-    });
+        this.store.dispatch(new ActionAuthLogin({ basicProfile, googleAuth }));
+      })
+      .catch(error => {
+        console.log(JSON.stringify(error, undefined, 2));
+      });
   }
 
-  getGAPI(): any {
+  public getGAPI(): any {
     return gapi;
+  }
+
+  private setBasicProfile(profile: any): BasicProfile {
+    return {
+      id: profile.getId(),
+      name: profile.getName(),
+      givenName: profile.getGivenName(),
+      familyName: profile.getFamilyName(),
+      imageUrl: profile.getImageUrl(),
+      email: profile.getEmail()
+    };
+  }
+
+  private setGoogleAuth(auth: any): GoogleAuth {
+    return {
+      id_token: auth.id_token,
+      access_token: auth.access_token,
+      scope: auth.scope,
+      expires_in: auth.expires_in,
+      expires_at: auth.expires_at,
+      first_issued_at: auth.first_issued_at,
+      login_hint: auth.login_hint,
+      token: auth.token
+    };
   }
 }

@@ -89,11 +89,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
   }
 
-  public attachSignin() {
-    this.googleLoginService.attachSignIn().subscribe(res => {
-      if (res) {
-        this.store.dispatch(new ActionAuthLogin());
-      }
-    });
+  public attachSignIn() {
+    this.googleLoginService.attachSignIn();
   }
 }
