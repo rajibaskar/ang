@@ -11,6 +11,7 @@ import {
   ActionAuthLogout,
   AuthActionTypes
 } from './auth.actions';
+import { ApiAuthServiceService } from '../api-service/api-auth-service.service';
 
 export const AUTH_KEY = 'AUTH';
 
@@ -25,8 +26,10 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   login = this.actions$.pipe(
     ofType<ActionAuthLogin>(AuthActionTypes.LOGIN),
-    tap(() =>
-      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
+    tap((actionAuth: ActionAuthLogin) => {
+      console.log(actionAuth.payload);
+      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true, payload: actionAuth.payload });
+      }
     )
   );
 

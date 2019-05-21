@@ -7,13 +7,16 @@ import { GoogleLoginService } from '../google-auth/google-login.service';
   providedIn: 'root'
 })
 export class GoogleService {
+
   constructor(private googleLoginService: GoogleLoginService) {}
 
   public saveFile(gFile: GFile): Observable<boolean> {
+
     return Observable.create(obs => {
+
       const boundary = '-------314159265358979323846';
       const delimiter = '\r\n--' + boundary + '\r\n';
-      const close_delim = '\r\n--' + boundary + '--';
+      const close_delimit = '\r\n--' + boundary + '--';
 
       const contentType = 'application/json';
 
@@ -27,11 +30,9 @@ export class GoogleService {
         'Content-Type: application/json\r\n\r\n' +
         JSON.stringify(metadata) +
         delimiter +
-        'Content-Type: ' +
-        contentType +
-        '\r\n\r\n' +
+        'Content-Type: ' + contentType + '\r\n\r\n' +
         gFile.data +
-        close_delim;
+        close_delimit;
 
       const request = this.googleLoginService.getGAPI().client.request({
         path: '/upload/drive/v3/files',

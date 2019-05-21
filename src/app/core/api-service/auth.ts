@@ -1,9 +1,10 @@
 import { BasicProfile } from '../google-auth/basic-profile';
 import { GoogleAuth } from '../google-auth/google-auth';
 
-export interface AuthState {
-  isAuthenticated: boolean;
+export class Auth {
+  idKey: string;
+
   basicProfile: BasicProfile;
+
   googleAuth: GoogleAuth;
-  token: string
 }
