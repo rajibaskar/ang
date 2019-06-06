@@ -72,13 +72,13 @@ export class GoogleLoginService {
 
   private setGoogleAuth(auth: any): GoogleAuth {
     return {
-      id_token: auth.id_token,
-      access_token: auth.access_token,
+      idToken: auth.id_token,
+      accessToken: auth.access_token,
       scope: auth.scope,
-      expires_in: auth.expires_in,
-      expires_at: auth.expires_at,
-      first_issued_at: auth.first_issued_at,
-      login_hint: auth.login_hint,
+      expiresIn: auth.expires_in,
+      expiresAt: auth.expires_at,
+      firstIssuedAt: auth.first_issued_at,
+      loginHint: auth.login_hint,
       token: auth.token
     };
   }

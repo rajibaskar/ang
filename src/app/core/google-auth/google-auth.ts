@@ -1,10 +1,10 @@
 export interface GoogleAuth {
   token: string;
-  access_token: string;
+  accessToken: string;
   scope: string;
-  first_issued_at: Date;
-  expires_at: Date;
-  expires_in: number;
-  id_token: string;
-  login_hint: string;
+  firstIssuedAt: number;
+  expiresAt: number;
+  expiresIn: number;
+  idToken: string;
+  loginHint: string;
 }
