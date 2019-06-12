@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsContainerComponent } from './settings';
+import { AuthGuardService } from './core';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'text-editor',
+    canActivate: [AuthGuardService],
     loadChildren: 'app/text-editor/text-editor.module#TextEditorModule'
   },
   {
