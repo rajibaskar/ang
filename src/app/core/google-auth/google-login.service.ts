@@ -4,6 +4,7 @@ import { GoogleAuth } from './google-auth';
 import { AppState } from '../core.state';
 import { Store } from '@ngrx/store';
 import { ActionAuthLogin } from '..';
+import { ApiAuthServiceService } from '../api-service/api-auth-service.service';
 
 declare const gapi: any;
 
@@ -13,7 +14,6 @@ const scope = [
   'https://www.googleapis.com/auth/drive',
   'https://www.googleapis.com/auth/drive.metadata',
   'https://www.googleapis.com/auth/drive.metadata.readonly',
-  'https://www.googleapis.com/auth/drive.photos.readonly',
   'https://www.googleapis.com/auth/drive.scripts',
   'https://www.googleapis.com/auth/drive.appdata',
   'https://www.googleapis.com/auth/drive.file'
@@ -28,7 +28,10 @@ const clientId =
 export class GoogleLoginService {
   private auth2: any;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private apiAuthServiceService: ApiAuthServiceService
+  ) {}
 
   public googleInit() {
     this.getGAPI().load('client:auth2', () => {
@@ -48,7 +51,17 @@ export class GoogleLoginService {
         const basicProfile = this.setBasicProfile(googleUser.getBasicProfile());
         const googleAuth = this.setGoogleAuth(googleUser.getAuthResponse());
 
-        this.store.dispatch(new ActionAuthLogin({ basicProfile, googleAuth }));
+        this.apiAuthServiceService
+          .addAuth(basicProfile, googleAuth)
+          .subscribe(result => {
+            this.store.dispatch(
+              new ActionAuthLogin({
+                basicProfile,
+                googleAuth,
+                token: result.idKey
+              })
+            );
+          });
       })
       .catch(error => {
         console.log(JSON.stringify(error, undefined, 2));

@@ -27,7 +27,10 @@ export class AuthEffects {
   login = this.actions$.pipe(
     ofType<ActionAuthLogin>(AuthActionTypes.LOGIN),
     tap((actionAuth: ActionAuthLogin) => {
-      // this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true, payload: actionAuth.payload });
+      this.localStorageService.setItem(AUTH_KEY, {
+        isAuthenticated: true,
+        payload: actionAuth.payload
+      });
     })
   );
 

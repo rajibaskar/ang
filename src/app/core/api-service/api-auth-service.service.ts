@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BasicProfile } from '../google-auth/basic-profile';
 import { GoogleAuth } from '../google-auth/google-auth';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { Auth } from './auth';
 import { environment as env } from '@env/environment';
-import { catchError, filter } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
-import { Store, select } from '@ngrx/store';
-import { selectAuth } from '../auth/auth.selectors';
+import { Store } from '@ngrx/store';
 import { AppState } from '../core.state';
-import { ActionAuthLoginToken } from '../auth/auth.actions';
-import { AuthState } from '../auth/auth.models';
 
 @Injectable({
   providedIn: 'root'
@@ -19,31 +16,21 @@ export class ApiAuthServiceService {
   baseURL = env.apiUrl + '/google-auth';
   token = '';
 
-  constructor(private http: HttpClient, private store: Store<AppState>) {
-    this.store
-      .pipe(
-        select(selectAuth),
-        filter(
-          (authState: AuthState) =>
-            authState.token === null && authState.isAuthenticated === true
-        )
-      )
-      .subscribe(state => this.addAuth(state.basicProfile, state.googleAuth));
-  }
+  constructor(private http: HttpClient, private store: Store<AppState>) {}
 
-  addAuth(basicProfile: BasicProfile, googleAuth: GoogleAuth): void {
+  addAuth(
+    basicProfile: BasicProfile,
+    googleAuth: GoogleAuth
+  ): Observable<Auth> {
     const auth: Auth = {
       basicProfile,
       googleAuth,
       idKey: undefined
     };
-    this.http
-      .post<Auth>(this.baseURL, auth)
-      .pipe(catchError(this.handleError))
-      .subscribe(result => {
-        this.store.dispatch(new ActionAuthLoginToken({ token: result.idKey }));
-        this.token = result.idKey;
-      });
+    return this.http.post<Auth>(this.baseURL, auth).pipe(
+      tap(t => (this.token = t.idKey)),
+      catchError(this.handleError)
+    );
   }
 
   public getToken(): string {

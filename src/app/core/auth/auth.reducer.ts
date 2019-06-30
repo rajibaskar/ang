@@ -22,13 +22,6 @@ export function authReducer(
         token: null
       };
 
-     case AuthActionTypes.LOGIN_TOKEN:
-      return {
-        ...state,
-        isAuthenticated: true,
-        token: action.payload.token
-      };
-
     case AuthActionTypes.LOGOUT:
       return {
         ...state,
