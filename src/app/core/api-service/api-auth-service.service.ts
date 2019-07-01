@@ -6,8 +6,9 @@ import { Auth } from './auth';
 import { environment as env } from '@env/environment';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from '../core.state';
+import { selectAuthToken } from '../auth/auth.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,11 @@ export class ApiAuthServiceService {
   baseURL = env.apiUrl + '/google-auth';
   token = '';
 
-  constructor(private http: HttpClient, private store: Store<AppState>) {}
+  constructor(private http: HttpClient, private store: Store<AppState>) {
+    this.store
+      .pipe(select(selectAuthToken))
+      .subscribe(token => (this.token = token));
+  }
 
   addAuth(
     basicProfile: BasicProfile,

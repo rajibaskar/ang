@@ -19,7 +19,7 @@ export function authReducer(
         isAuthenticated: true,
         basicProfile: action.payload.basicProfile,
         googleAuth: action.payload.googleAuth,
-        token: null
+        token: action.payload.token
       };
 
     case AuthActionTypes.LOGOUT:

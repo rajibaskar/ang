@@ -40,7 +40,7 @@ export class GoogleLoginService {
         cookie_policy: 'single_host_origin',
         scope: scope
       });
-      this.attachSignIn();
+      // this.attachSignIn();
     });
   }
 

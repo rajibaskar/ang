@@ -29,7 +29,9 @@ export class AuthEffects {
     tap((actionAuth: ActionAuthLogin) => {
       this.localStorageService.setItem(AUTH_KEY, {
         isAuthenticated: true,
-        payload: actionAuth.payload
+        googleAuth: actionAuth.payload.googleAuth,
+        basicProfile: actionAuth.payload.basicProfile,
+        token: actionAuth.payload.token
       });
     })
   );
@@ -39,7 +41,12 @@ export class AuthEffects {
     ofType<ActionAuthLogout>(AuthActionTypes.LOGOUT),
     tap(() => {
       this.router.navigate(['']);
-      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false });
+      this.localStorageService.setItem(AUTH_KEY, {
+        isAuthenticated: false,
+        googleAuth: null,
+        basicProfile: null,
+        token: null
+      });
     })
   );
 }
